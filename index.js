@@ -8,14 +8,14 @@ const io = require("socket.io")(server);
 server.listen(2020);
 
 app.get('/', (req, res)=> {
-    res.sendFile(__dirname + "/index5.html");
+    res.sendFile(__dirname + "/prelogin.html");
 });
 
-app.use(express.static("public"));
+app.use(express.static("pict"));
 
-io.on(connection, (socket) =>{
+io.on("connection", (socket) =>{
     mongo.connect(url, (err, db)=> {
-        var projectDb = db.db("letsstudy");
+        var projectDb = db.db("LetsStudy");
         var dbu = projectDb.collection("users");
 
         socket.on("login", (username, password) => {

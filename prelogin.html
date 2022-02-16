@@ -1,31 +1,73 @@
-<html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.rectangle {
-  height: 40px;
-  width: 400px;
-  background-color: #000;
-}
-</style>
+  <style>
+    #loginsec { 
+      transition: .3s;
+      justify-content: center;
+      align-content: center;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 0px; left: 0px;
+      width: 100%; height: 80%;
+      background: white;
+    }
+
+    #signupsec {
+      transition: .3s;
+      justify-content: center;
+      align-content: center;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 0%; left: 100%;
+      width: 100%; height: 80%;
+      background: black;
+    }
+
+    #placeholder {
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+      position: absolute;
+      top: 20%; left: 0%;
+      width: 100%; height: 80%;
+      background: magenta;
+    }
+
+    #loginbox {
+      position: absolute;
+      top: 0px; left: 0px;
+      width: 100%; height: 100%;
+      z-index: 10;
+      background: aqua;
+    }
+
+  </style>
 </head>
-<body>
 
-<h2>Rectangle CSS</h2>
-<div class="rectangle"></div>
+<div id="loginbox">
+    <!-- <input id="username" type="text">
+    <input id="password" type="password" name="" id="">
+    <button onclick="login()"> Login </button> -->
 
-</body>
-</html> 
+    <button onclick="slide()">
+      login
+    </button>
+    <button onclick="reverseslide()">
+      signup
+    </button>
 
-
-<div id="loginbox" style="justify-content: center; align-content: center; display: flex; flex-direction: column; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 10; background: aqua;">
-    <input id="username" type="text">
-    <input id="username" type="password" name="" id="">
+  <div id="placeholder"> 
+    <div id="loginsec">
+      <input id="username" type="text">
+    <input id="password" type="password" name="" id="">
     <button onclick="login()"> Login </button>
+    </div>    
+    <div id="signupsec">
+      signupsec
+    </div>
+  </div>
 </div>
 <script src="/socket.io/socket.io.js"></script>
 <script src="main.js">
-
 </script>
-
-
