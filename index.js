@@ -30,15 +30,6 @@ io.on("connection", (socket) =>{
                 }
             });
         });
-
-        // io.on("connection", (socket)=> {
-        //     socket.on("getfucntion", ()=> {
-        //         dbf.find({}).toArray((err, res) => {
-        //             if(!err){ socket.emit("functions", res)};
-        //         });
-        //     });
-        // });
-
         socket.on("dissconnect", () => {
         });
         socket.on("uiStateChange", (item, property) =>{
