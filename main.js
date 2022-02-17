@@ -1,6 +1,6 @@
 // const { Socket } = require("dgram");
 
-var socket = new io();
+// var socket = new io();
 
 function login(){
     var username = document.getElementById("username");
@@ -8,18 +8,18 @@ function login(){
     socket.emit("login", username.value, password.value);
 }
 
-socket.on("login", (good, stuff) =>{
-    console.log(good);
+// socket.on("login", (good, stuff) =>{
+//     console.log(good);
 
-    if(good == "success"){
-        var lb = document.getElementById("loginbox");
-        var ls = document.getElementById("image")
-        lb.style.display = "none";
-        ls.style.display = "none";
-    }else{
+//     if(good == "success"){
+//         var lb = document.getElementById("loginbox");
+//         var ls = document.getElementById("image")
+//         lb.style.display = "none";
+//         ls.style.display = "none";
+//     }else{
 
-    }
-});
+//     }
+// });
 
 function slide(){
     var a = document.getElementById("loginsec");
