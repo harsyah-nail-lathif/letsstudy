@@ -13,6 +13,8 @@ app.get('/', (req, res)=> {
 
 app.use(express.static("pict"));
 
+
+
 io.on("connection", (socket) =>{
     mongo.connect(url, (err, db)=> {
         var projectDb = db.db("LetsStudy");

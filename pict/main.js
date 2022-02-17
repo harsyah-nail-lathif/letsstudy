@@ -13,7 +13,9 @@ socket.on("login", (good, stuff) =>{
 
     if(good == "success"){
         var lb = document.getElementById("loginbox");
+        var ls = document.getElementById("image")
         lb.style.display = "none";
+        ls.style.display = "none";
     }else{
 
     }
@@ -31,4 +33,11 @@ function reverseslide(){
     var b = document.getElementById("signupsec");
     a.style.left = "0%";
     b.style.left = "100%";
+}
+
+function showlogin(){
+    var a = document.getElementById("loginbox");
+    var b = document.getElementById("itemprelogin");
+    a.style.display = "contents";
+    b.style.display = "none";
 }
