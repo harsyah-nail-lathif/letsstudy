@@ -112,7 +112,7 @@
       box-shadow: 0px 5px 15px gray;
     }
 
-     #itemprelogin{
+    #itemprelogin{
       top: 0px; left: 0px;
       width: 100%; height: 100%;
       float: left;
@@ -131,8 +131,7 @@
 
   </style>
 </head>
-<div>
-<img id="image" src="pngpict.png">
+<img id="image" src="pict/pngpict.png">
 <!-- 
 <div id="itemprelogin">
 <textarea name="" id="text" cols="30" rows="5">
@@ -148,22 +147,27 @@ login
     <div id="tittle">
       let's study
     </div>
+
     <button id="loginbutton" onclick="reverseslide()">
       login
     </button>
+
     <button id="signupbutton" onclick="slide()">
       signup
     </button>
 
   <div id="placeholder"> 
     <div id="loginsec">
-      <input id="username" type="text" placeholder="username">
+
+    <input id="username" type="text" placeholder="username">
 
     <input id="password" type="password" name="" id="" placeholder="password">
 
-    <button id="buttonlogin" onclick="login()"> Login </button>
+    <a href="forgot_password.html" target="_blank">forget password</a>
 
-    </div>    
+    <button id="buttonlogin" onclick="login()"> Login </button>
+  </div> 
+
     <div id="signupsec">
       <input id="email" type="email" name="" id="" placeholder="Email">
 
@@ -172,15 +176,12 @@ login
       <input id="password" type="password" name="" id="" placeholder="password">
 
       <input id="conpassword" type="password" name="" id="" placeholder="Confirm Password">
-  
+
       <button id="buttonlogin" onclick="login()"> SignUp </button>
-  
     </div>
   </div>
 </div>
 <!-- the end of login section -->
-
-</div>
 <script src="/socket.io/socket.io.js"></script>
 <script src="main.js">
 </script>
