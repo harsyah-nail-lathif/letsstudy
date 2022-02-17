@@ -9,11 +9,10 @@ server.listen(2020);
 
 app.get('/', (req, res)=> {
     res.sendFile(__dirname + "/prelogin.html");
+    res.sendFile(__dirname + "/forgot_password.html");
 });
 
 app.use(express.static("pict"));
-
-
 
 io.on("connection", (socket) =>{
     mongo.connect(url, (err, db)=> {
