@@ -16,7 +16,9 @@
   },
   "homepage": "https://github.com/harsyah-nail-lathif/letsstudy#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.3.1",
     "socket.io": "^2.1.0"
   },
