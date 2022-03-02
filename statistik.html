@@ -3,17 +3,31 @@
 
 <head>
     <!--link link to css and js-->
+    <link href="vendor/aos/aos.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> 
+    
     <!--import css-->
     <link rel="stylesheet" href="statistik.css">
+
     <!--cdn bootstrap 5 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
         integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <!--the end of cdn bootstrap5-->
+    <!-- aos cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- the end of cdn aos -->
     <!--cdn Jquery-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
     <!--the end of cdn Jquery-->
+    <script src="statistik.js"></script>
 
     <!--the end of link link to css and js-->
 
@@ -25,56 +39,53 @@
 </head>
 
 <body>
-    <header class="container sticky-top p-2 d-flex justify-content-center ">
-        <nav id="nav" class="navbar nav-pills navbar-light shadow w-75 h-50 d-inline-block border navbar-expand-lg rounded-pill">
-            <div class="container">
-                <div class="navbar-collapse">
-                    <!-- Navbar brand -->
-                    <a class="navbar-brand mx-2 mt-lg-0" href="#">
-                        LetsStudy
-                    </a>
-                    <!-- end of Navbar brand -->
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Dashboard</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Team</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Projects</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Avatar -->
-                <div class="profile">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25"
-                        alt="Black and White Portrait of a Man" loading="lazy" />
-                </div>
-            </div>
-        </nav>
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <span>LetsStudy</span>
+            </a>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                    <li><a class="nav-link scrollto active">Statistik</a></li>
+                    <li><a class="nav-link scrollto" href="#team">Team</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
     </header>
 
     <main>
         <!--section 1-->
-        <section class="">
-            <div id="judul" class=" container bg-danger my-2 gx-3">
-                <div class="container position-relative">
-                    <div class="row row-cols-3 ">
-                        <div class="col-9 col-md-6 col align-self-center">
-                            <p class="">Statistik</p>
-                            <p class="my-5">Mari kita lihat apa aja sih yang 
-                                kamu lakukan dalam Minggu ini</p>
+        <section id="hero" class="hero d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 d-flex flex-column justify-content-center">
+                        <h1 data-aos="fade-up">We offer modern solutions for growing your business</h1>
+                        <h2 data-aos="fade-up" data-aos-delay="400">We are team of talented designers making websites
+                            with Bootstrap</h2>
+                        <div data-aos="fade-up" data-aos-delay="600">
+                            <div class="text-center text-lg-start">
+                                <a href="#about"
+                                    class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                    <span>Get Started</span>
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
-                        <div class="float-end">
-                            <img src="pict/pngpict.png"/>
-                        </div>
+                    </div>
+                    <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                        <img src="pict/orang_bingung.jpg" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
         </section>
+        
         <!--end of section 1-->
-
         <section class="">
             <div class="container" id="title-note">
                 <div class="col-3 my-4">
@@ -124,14 +135,14 @@
                 </div>
         </section>
     </main>
-
+    <!-- back to top -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- end of back to top -->
     <!-- footer  -->
     <footer class="footer mt-auto py-3">
         <div class="container">
             <span class="text-muted">&copy; 2020 LetsStudy</span>
         </div>
-
-
         <!-- end of footer -->
 </body>
 
