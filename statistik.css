@@ -2450,7 +2450,7 @@ section {
     margin-bottom: 15px;
     font-size: 18px;
   }
-  .services .title a {
+  .services .title p {
     color: #111;
   }
   .services .description {
@@ -2458,7 +2458,7 @@ section {
     line-height: 28px;
     margin-bottom: 0;
   }
-  .services .icon-box:hover .title a, .services .icon-box:hover .description {
+  .services .icon-box:hover .title p, .services .icon-box:hover .description {
     color: #fff;
   }
   .services .icon-box:hover .icon {
@@ -2497,25 +2497,25 @@ section {
     text-align: center;
     margin-bottom: 15px;
   }
-  .more-services .card-title a {
+  .more-services .card-title p {
     color: #222222;
   }
   .more-services .card-text {
     color: #5e5e5e;
   }
-  .more-services .read-more a {
+  .more-services .read-more p {
     color: #777777;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 12px;
     transition: 0.4s;
   }
-  .more-services .read-more a:hover {
+  .more-services .read-more p:hover {
     text-decoration: underline;
   }
   .more-services .card:hover .card-body {
     background: #3498db;
   }
-  .more-services .card:hover .read-more a, .more-services .card:hover .card-title, .more-services .card:hover .card-title a, .more-services .card:hover .card-text {
+  .more-services .card:hover .read-more p, .more-services .card:hover .card-title, .more-services .card:hover .card-title p, .more-services .card:hover .card-text {
     color: #fff;
   }
