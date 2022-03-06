@@ -2440,11 +2440,6 @@ section {
     background: #3498db;
     transition: all 0.3s ease-in-out;
   }
-  .services .icon i {
-    font-size: 36px;
-    line-height: 1;
-    color: #fff;
-  }
   .services .title {
     font-weight: 700;
     margin-bottom: 15px;
@@ -2463,9 +2458,6 @@ section {
   }
   .services .icon-box:hover .icon {
     background: #fff;
-  }
-  .services .icon-box:hover .icon i {
-    color: #3498db;
   }
   
   .read-more p, .card-title, .card-title p, .card-text {
