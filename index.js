@@ -9,9 +9,10 @@ server.listen(2020);
 
 app.get('/', (req, res)=> {
     res.sendFile(__dirname + "/prelogin.html");
-    res.sendFile(__dirname + "/forgot_password.html");
 });
-
+app.get('/main.js', (req, res)=> {
+    res.sendFile(__dirname + "/main.js");
+});
 app.use(express.static("pict"));
 
 io.on("connection", (socket) =>{
@@ -19,8 +20,8 @@ io.on("connection", (socket) =>{
         var projectDb = db.db("LetsStudy");
         var dbu = projectDb.collection("users");
 
-        socket.on("login", (username, password) => {
-            console.log(username, password);
+        socket.on("login", (u, p) => {
+            console.log(u, p);
             var search = {"username" : username, "password" : password}
             dbu.find(search).toArray((err, result) => {
                 console.log(result);

@@ -1,6 +1,5 @@
 <head>
   <style>
-
     #buttonlogin{
       height: 65px; width: 160px;
       border-radius: 20px;
@@ -128,47 +127,30 @@
       border: none;
       font-size: 24px;
     }
-
   </style>
 </head>
 <img id="image" src="pict/pngpict.png">
-
 <div id="loginbox">
-    <div id="tittle">
-      let's study
-    </div>
+    <div id="tittle">let's study</div>
+    <button id="loginbutton" onclick="reverseslide()">login</button>
+    <button id="signupbutton" onclick="slide()">signup</button>
 
-    <button id="loginbutton" onclick="reverseslide()">
-      login
-    </button>
-
-    <button id="signupbutton" onclick="slide()">
-      signup
-    </button>
-
-  <div id="placeholder">
-    <div id="loginsec">
-      
-    <input id="username" type="text" name="username" placeholder="username">
-    <input id="password" type="password" name="password"  placeholder="password">
-    <a href="forgot_password.html" target="_blank">forget password</a>
-    <button id="buttonlogin" onclick="login()"> Login </button>
-  </div> 
-
+    <div id="placeholder">
+      <div id="loginsec">
+      <input id="username" type="text" name="username" placeholder="username">
+      <input id="password" type="password" name="password"  placeholder="password">
+      <button id="buttonlogin" onclick="login()"> Login </button>
+    </div> 
     <div id="signupsec">
       <input id="email" type="email" name="email" placeholder="Email">
-
-      <input id="username" type="text" name="username" placeholder="username">
-
-      <input id="password" type="password" name="password" placeholder="password">
-
+      <input id="usernameS" type="text" name="username" placeholder="username">
+      <input id="passwordS" type="password" name="password" placeholder="password">
       <input id="conpassword" type="password" name="conpassword" placeholder="Confirm Password">
-
       <button id="buttonlogin" onclick="login()"> SignUp </button>
     </div>
   </div>
 </div>
 <!-- the end of login section -->
-<!-- <script src="/socket.io/socket.io.js"></script> -->
+<script src="/socket.io/socket.io.js"></script>
 <script src="main.js">
 </script>
