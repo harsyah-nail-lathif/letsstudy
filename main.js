@@ -20,6 +20,20 @@ socket.on("login", (good, stuff) => {
     }
 });
 
+function register(){
+    var email = document.getElementById("email");
+    var username = document.getElementById("username");
+    var password = document.getElementById("password");
+    var conpassword = document.getElementById("conpassword");
+    socket.emit("register",email.value, username.value, password.value, conpassword.value);
+}
+
+function forgetpasswordSection(){
+    var new_password = document.getElementById("new_password");
+    var Confirm_New_Password = document.getElementById("Confirm_New_Password");
+    socket.emit("register",new_password.value, Confirm_New_Password.value);
+}
+
 function slide() {
     var a = document.getElementById("loginsec");
     var b = document.getElementById("signupsec");

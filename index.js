@@ -32,6 +32,16 @@ io.on("connection", (socket) =>{
                 }
             });
         });
+
+        socket.on("register", (u, p)=>{
+            console.log(u, p);
+            dbu.listen(search) = {"email" : email, "username" : username, "password" : password, "conpassword" : conpassword}
+            console.log(result);
+            if(!err && result.length > 0){
+                
+            }
+        })
+
         socket.on("dissconnect", () => {
         });
         socket.on("uiStateChange", (item, property) =>{
