@@ -31,7 +31,7 @@ function register(){
 function forgetpasswordSection(){
     var new_password = document.getElementById("new_password");
     var Confirm_New_Password = document.getElementById("Confirm_New_Password");
-    socket.emit("register",new_password.value, Confirm_New_Password.value);
+    socket.emit("forgetpassword",new_password.value, Confirm_New_Password.value);
 }
 
 function slide() {
