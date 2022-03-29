@@ -27,6 +27,7 @@ io.on("connection", (socket) =>{
                 console.log(result);
                 if(!err && result.length > 0){
                     socket.emit("login", "success", result);
+                    socket.lala = true;
                 }else{
                     socket.emit("login", "you're wrong bro. try again", null)
                 }
