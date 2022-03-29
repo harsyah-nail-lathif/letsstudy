@@ -3,6 +3,7 @@ var url = "mongodb://localhost:27017/";
 const express = require('express');
 const app = express();
 const http = require("http");
+const { getuid } = require('process');
 const server = http.createServer(app);
 const io = require("socket.io")(server);
 server.listen(2020);
@@ -33,6 +34,14 @@ io.on("connection", (socket) =>{
                 }
             });
         });
+
+        socket.on("register", (u, p)=>{
+            console.log(u, p);
+            db.users.insertOne({
+                username: getuid.username,
+                password: getuid.password
+            })
+
         socket.on("dissconnect", () => {
         });
         socket.on("uiStateChange", (item, property) =>{
