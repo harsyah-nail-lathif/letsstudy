@@ -2,62 +2,138 @@
 <html lang="en">
 
 <head>
+    <!--link link to css and js-->
+
+    <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!--import css-->
+    <link rel="stylesheet" href="/Home/Home.css">
+
+    <!--cdn bootstrap 5 -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <!--the end of cdn bootstrap5-->
+
+    <!-- aos cdn -->
+    <link href="/vendor/aos/aos.css" rel="stylesheet">
+    <!-- the end of cdn aos -->
+
+    <!--cdn Jquery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <!--the end of cdn Jquery-->
+
+
+    <!--the end of link link to css and js-->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Let's Study</title>
-    <link rel="stylesheet" href="style.css" class="css">
+    <title>homework</title>
+
 </head>
 
 <body>
-    <!--navbar-->
-    <nav>
-        <div class="wrapper">
-            <div class="logo"><a href=''>Let's Study</a></div>
-            <div class="menu">
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <a href="/Home/Home.html" class="logo d-flex align-items-center">
+                <span>LetsStudy</span>
+            </a>
+            <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#statistik">Statistik</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="#blog">Blog</a></li>
+                    <li><a class="nav-link scrollto active">Home</a></li>
+                    <li><a class="nav-link scrollto" href="/Course/Course.html">Course</a></li>
+                    <li><a class="nav-link scrollto" href="/Statistik/statistik.html">Statistik</a></li>
+                    <li><a class="nav-link scrollto" href="/HomeWork/homework.html">HomeWork</a></li>
+                    <li><a class="nav-link scrollto" href="/Profile/profile.html">Profile</a></li>
                 </ul>
-            </div>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            <!--navbar -->
         </div>
-    </nav>
+    </header>
 
-    <!--container 1-->
-    <section class="container1">
-        <div>
-            <div>
-                <h2>Want to Learn Anything, Start from Here!</h2>
-                <p>belajar untuk persiapan ulangan sekolah, UTBK, AKM, dan Ujian Mandiri</p>
+    <main>
+        <!--section 1-->
+        <section id="hero" class="hero d-flex flex-column">
+            <div class="page-content page-container" id="page-content">
+                <div class="padding">
+                    <div class="row container d-flex justify-content-center">
+                        <div class="col-xl-6 col-md-12">
+                            <div class="card user-card-full">
+                                <div class="row m-l-0 m-r-0">
+                                    <div class="col-sm-4 bg-c-lite-green user-profile">
+                                        <div class="card-block text-center text-white">
+                                            <div class="m-b-25"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> </div>
+                                            <h6 class="f-w-600">Hembo Tingor</h6>
+                                            <p>Web Designer</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="card-block">
+                                            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <p class="m-b-10 f-w-600">Email</p>
+                                                    <h6 class="text-muted f-w-400">rntng@gmail.com</h6>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <p class="m-b-10 f-w-600">Phone</p>
+                                                    <h6 class="text-muted f-w-400">98979989898</h6>
+                                                </div>
+                                            </div>
+                                            <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Projects</h6>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <p class="m-b-10 f-w-600">Recent</p>
+                                                    <h6 class="text-muted f-w-400">Sam Disuja</h6>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <p class="m-b-10 f-w-600">Most Viewed</p>
+                                                    <h6 class="text-muted f-w-400">Dinoter husainm</h6>
+                                                </div>
+                                            </div>
+                                            <ul class="social-link list-unstyled m-t-40 m-b-10">
+                                                <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="facebook" data-abc="true"><i class="mdi mdi-facebook feather icon-facebook facebook" aria-hidden="true"></i></a></li>
+                                                <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="twitter" data-abc="true"><i class="mdi mdi-twitter feather icon-twitter twitter" aria-hidden="true"></i></a></li>
+                                                <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="instagram" data-abc="true"><i class="mdi mdi-instagram feather icon-instagram instagram" aria-hidden="true"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <img src="https://img.freepik.com/free-vector/teacher-student-concept-illustration_114360-7905.jpg?w=1800"
-            alt="hero">
-    </section>
+        </section>
 
-    <!--container 2-->
-    <section class="container2">
-        <div>
-            <div>
-                <h2>We Have New Program!!!</h2>
-                <p>Bekerja sama dengan partner, kami menyelenggarakan beberapa program untuk mendukung Siswa-siswa
-                    terbaik Indonesia.</p>
-            </div>
-        </div>
-    </section>
 
-    <!--container 3-->
-    <section class="container3">
-        <div class="text">
-            <div>
-                <h1>Dapet apa aja sih di Let's study?</h1>
-            </div>
+    </main>
+    <!-- back to top -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+    <!-- end of back to top -->
+
+    <!-- footer  -->
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <span class="text-muted">&copy; 2020 LetsStudy</span>
         </div>
-    </section>
+    </footer>
+    <!-- end of footer -->
+
+    <script src="/vendor/purecounter/purecounter.js"></script>
+    <script src="/vendor/aos/aos.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/vendor/php-email-form/validate.js"></script>
+    <script src="/Home/Home.js"></script>
 
 </body>
 
