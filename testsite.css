@@ -31,7 +31,7 @@ body {
     font-size: 120px;
     color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
-    transition: background 0.2s;
+    transition: back 0.2s;
   }
   
   .add-note:hover {
