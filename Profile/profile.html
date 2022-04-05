@@ -1,118 +1,64 @@
-<head>
-    <link rel="stylesheet" href="/Profile/profile.css">
-    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LetsStudy</title>
+    <title>Let's Study</title>
+    <link rel="stylesheet" href="style.css" class="css">
 </head>
-<header id="header" class="header fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-        <a href="/Home/Home.html" class="logo d-flex align-items-center">
-            <span>LetsStudy</span>
-        </a>
-        <nav id="navbar" class="navbar">
-            <ul>
-                <li><a class="nav-link scrollto" href="/Home/Home.html">Home</a></li>
-                <li><a class="nav-link scrollto" href="/Course/Course.html">Course</a></li>
-                <li><a class="nav-link scrollto" href="/Statistik/statistik.html">Statistik</a></li>
-                <li><a class="nav-link scrollto" href="/HomeWork/homework.html">HomeWork</a></li>
-                <li><a class="nav-link scrollto active">Profile</a></li>
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
-        <!--navbar -->
-    </div>
-</header>
-<div id="headers">
 
+<body>
+    <!--navbar-->
+    <nav>
+        <div class="wrapper">
+            <div class="logo"><a href=''>Let's Study</a></div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#statistik">Statistik</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <!--container 1-->
+    <section class="container1">
+        <div>
+            <div>
+                <h2>Want to Learn Anything, Start from Here!</h2>
+                <p>belajar untuk persiapan ulangan sekolah, UTBK, AKM, dan Ujian Mandiri</p>
+            </div>
+        </div>
+        <img src="https://img.freepik.com/free-vector/teacher-student-concept-illustration_114360-7905.jpg?w=1800"
+            alt="hero">
+    </section>
 
-    <img src="pict/sample.jpg" alt="profile pict" id="profilepict">
-    <div id="profilename">
-        RIZKI KAMIL
-    </div>
-    <button id="btnphone">
-        Verify Your Number
-    </button>
-    <div id="data">
-        <div id="one">
-            <div id="titleemail">
-                EMAIL :
-            </div>
-            <div id="email">
-                dummyemail@gmail.com
+    <!--container 2-->
+    <section class="container2">
+        <div>
+            <div>
+                <h2>We Have New Program!!!</h2>
+                <p>Bekerja sama dengan partner, kami menyelenggarakan beberapa program untuk mendukung Siswa-siswa
+                    terbaik Indonesia.</p>
             </div>
         </div>
-        <div id="two">
-            <div id="titlephone">
-                PHONE NUMBER :
-            </div>
-            <div id="phone">
-                +62 87654321
-            </div>
-        </div>
-        <div id="three">
-            <div id="titlestatus">
-                SIGN UP AS :
-            </div>
-            <div id="status">
-                Student / Teacher
+    </section>
+
+    <!--container 3-->
+    <section class="container3">
+        <div class="text">
+            <div>
+                <h1>Dapet apa aja sih di Let's study?</h1>
             </div>
         </div>
-    </div>
-</div>
-<div id="premium">
-    <div id="premiumone">
-        <img id="imgdiamond" src="pict/diamond.jpg" alt="">
-        <div id="text">
-            PREMIUM PLAN
-        </div>
-    </div>
-    <div id="premiumtwo">
-        <div id="titlepremium">
-            Buy Package
-        </div>
-        <div id="contentpremium">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit ut aliquam, consectetur adipiscing elit ut aliquam Lorem ipsum.
-        </div>
-    </div>
-</div>
-<div id="column">
-    <div id="option1">
-        <div id="option1text">
-            Riwayat Pembelian
-        </div>
-        <div id="morebutton">
-            >
-        </div>
-    </div>
-    <div id="option2">
-        <div id="option1text">
-            Get Voucher?
-        </div>
-        <div id="morebutton">
-            >
-        </div>
-    </div>
-    <div id="premiumone">
-        <img id="imgdiamond" src="pict/settings.jpg" alt="">
-        <div id="text">
-            PENGATURAN UMUM
-        </div>
-    </div>
-    <div id="option2">
-        <div id="option1text">
-            Change Profile
-        </div>
-        <div id="morebutton">
-            >
-        </div>
-    </div>
-</div>
-<script src="/socket.io/socket.io.js"></script>
-<script src="/Profile/profile.js">
-</script>
+    </section>
+
+</body>
+
+</html>
