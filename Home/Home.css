@@ -508,7 +508,7 @@ section {
     width: 100%;
     height: 70vh;
     background: url(../img/hero-bg.png) top center no-repeat;
-    background-color: #e9b554;
+    background-color: #f8c66a;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -572,5 +572,78 @@ section {
 
     .hero .hero-img img {
         width: 100%;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+.card-secfour {
+    width: 400px;
+    height: 600px;
+    position: relative;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+}
+
+
+.ribon {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background-color: #2b98f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.ribon .fas.fa-spray-can,
+.ribon .fas.fa-broom,
+.ribon .fas.fa-shower,
+.ribon .fas.fa-infinity {
+    font-size: 30px;
+    color: white
+}
+
+.card-secfour .price {
+    color: #2b98f0;
+    font-size: 30px
+}
+
+.card-secfour ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+.card-secfour ul li {
+    font-size: 12px;
+    margin-bottom: 8px
+}
+
+.card-secfour:hover .fa.fa-check {
+    color: #2b98f0
+}
+
+.card-secfour .btn-secfour {
+    width: 300px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2b98f0;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none
+}
+
+@media (max-width: 600px) {
+    .card-secfour {
+        max-width: 100%
     }
 }
