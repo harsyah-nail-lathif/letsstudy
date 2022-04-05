@@ -2124,27 +2124,8 @@ section {
     z-index: 1;
 }
 
-.services .icon-box::before {
-    content: "";
-    position: absolute;
-    background: #e1f0fa;
-    right: -60px;
-    top: -40px;
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    transition: all 0.3s;
-    z-index: -1;
-}
 
-.services .icon-box:hover::before {
-    background: #3498db;
-    right: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 0px;
-}
+
 
 .services .icon {
     margin: 0 auto 20px auto;
@@ -2172,25 +2153,8 @@ section {
     font-size: 15px;
     line-height: 28px;
     margin-bottom: 0;
-<<<<<<< HEAD
   }
-  .read-more p, .card-title, .card-title p, .card-text {
-=======
-}
 
-.services .icon-box:hover .title p,
-.services .icon-box:hover .description {
-    color: #fff;
-}
-
-.services .icon-box:hover .icon {
-    background: #fff;
-}
-
-.read-more p,
-.card-title,
-.card-title p,
-.card-text {
->>>>>>> ca098601dc72ff50ff3060455e396c3eae2342a6
+.read-more p, .card-title, .card-title p, .card-text {
     color: #fff;
 }
