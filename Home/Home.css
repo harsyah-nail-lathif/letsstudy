@@ -487,6 +487,20 @@ section {
     height: 60vh;
 }
 
+.li-secfour-group{
+    margin: 0%;
+    height: 0%;
+    
+}
+
+.text-foot{
+    margin: 0%;
+}
+.text-bold{
+    font-size: 15px;
+    font-weight: 500;
+}
+
 /*--------------------------------------------------------------
   # Hero Section
   --------------------------------------------------------------*/
