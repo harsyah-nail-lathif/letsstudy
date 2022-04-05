@@ -2219,6 +2219,19 @@ section {
     font-size: 14px;
 }
 
+.button-top {
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 0%;
+    margin-top: 0%;
+}
+
+.btn-primary {
+    size: 100%;
+    background-color: #F9CB77;
+    margin-left: 80px;
+}
+
 /*--------------------------------------------------------------
   # Footer
   --------------------------------------------------------------*/
