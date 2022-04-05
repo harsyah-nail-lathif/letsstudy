@@ -161,5 +161,56 @@
 </div>
 <!-- the end of login section -->
 <script src="/socket.io/socket.io.js"></script>
-<script src="main.js">
-</script>
+<script src="firebaselogin.js"></script>
+
+  <script>
+    // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBGDdKAsyvyeaDe7_5ypBzwB11dK-iumCs",
+  authDomain: "letsstudy-b50fb.firebaseapp.com",
+  projectId: "letsstudy-b50fb",
+  storageBucket: "letsstudy-b50fb.appspot.com",
+  messagingSenderId: "84562109475",
+  appId: "1:84562109475:web:6b8b2193eedaaef67dbd96",
+  measurementId: "G-MED1YHK3P0"
+};
+
+// Initialize Firebase
+const auth = getAuth();
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+signup.addEventListener('click',(e)=>{
+
+  var usernameS = document.getElementById("usernameS".valueOf);
+  var emailS = document.getElementById("emailS".valueOf);
+  // var passwordS = document.getElementById("passwordS").value;
+  // var conpasswordS = document.getElementById("conpassword").value;
+
+  createUserWithEmailAndPassword(auth, emailS, passwordS, conpasswordS, usernameS)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    alert("User Created")
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+
+    alert(errorMessage);
+  });
+
+})
+
+  </script>
