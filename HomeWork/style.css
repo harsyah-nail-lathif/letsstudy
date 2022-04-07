@@ -1,13 +1,13 @@
 
   .title{
-    text-align: left;
+    text-align: center;
     margin-top: 25px;
   }
 
   .form{
       margin: auto;
       width: 100%;
-      text-align: left;
+      text-align: right;
   }
 
   input[type='submit'], button, [aria-label]{
