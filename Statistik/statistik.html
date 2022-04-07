@@ -33,6 +33,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LetsStudy</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
@@ -92,15 +93,20 @@
                     <canvas id="myChart"></canvas>
                 </div> -->
 
-                <div class="row mb-5 d-flex justify-content-center  g-4">
-                    <div class="col-md-6 col-lg-5 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="row mb-5 d-flex justify-content-center  g-4" data-aos="fade-up">
+
+                    <canvas id="myChart">
+                        <input type="number" id="mtk">
+                    </canvas>
+
+                    <!-- <div class="col-md-6 col-lg-5 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <h4 class="title">
                                 <p>Kamil-Trex</p>
                             </h4>
                             <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
                                 excepturi</p>
-                        </div>
+                        </div> -->
                     </div>
 
                     <!-- <div class="col-md-6 col-lg-5 d-flex align-items-center mb-5 mb-lg-0">
@@ -149,30 +155,26 @@
     </footer>
     <!-- end of footer -->
 
-    <script src="../vendor/purecounter/purecounter.js"></script>
-    <script src="../vendor/aos/aos.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="../vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="../vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="../vendor/php-email-form/validate.js"></script>
-    <script src="../Statistik/statistik.js"></script>
-    <script>const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
+    <script class="title">const labels = [
+        'Matematika',
+        'Bahasa Indonesia',
+        'Bahasa Inggris',
+        'PPKN',
+        'IPS',
+        'Fisika',
+        'Biologi',
+        'Kimia'
       ];
     
       const data = {
         labels: labels,
         datasets: [{
           label: 'My First dataset',
-          backgroundColor: 'rgb(255, 99, 132)',
+          backgroundColor: ['red', 'green', 'blue', 'yellow', 'pink', 'purple', 'cyan', 'grey'],
           borderColor: 'rgb(255, 99, 132)',
-          data: [0, 10, 5, 2, 20, 30, 45],
+          data: [
+          document.getElementById('mtk').value,    
+          90, 75, 82, 80, 90, 88, 70],
         }]
       };
     
@@ -182,10 +184,21 @@
         options: {}
       };
 
-      const myChart = new Chart(
-  document.getElementById('myChart'),
-  config
-);</script>
+    const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+  
+  </script>
+    <script src="../vendor/purecounter/purecounter.js"></script>
+    <script src="../vendor/aos/aos.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../vendor/php-email-form/validate.js"></script>
+    <script src="../Statistik/statistik.js"></script>
+    
 
 </body>
 
