@@ -10,6 +10,7 @@
     
     <!--import css-->
     <link rel="stylesheet" href="../HomeWork/homework.css">
+    <link rel="stylesheet" href="../HomeWork/style.css">
 
     <!--cdn bootstrap 5 --> 
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -91,7 +92,39 @@
 
                     <div class="container">
                         <div class="row mb-5 mt-2 d-flex justify-content-center g-5">
-                            <div class="col-md-6 col-lg-5 d-flex align-items-stretch mb-5 mb-lg-0">
+
+
+                            <!-- <div class="title">
+                                <h1>Oh Crud!</h1>
+                                <p>Things I forgot to do:</p>
+                            </div> -->
+                        
+                        <div class="form">
+                            <form action="javascript:void(0);" method="POST" onsubmit="app.Add()"> 
+                            <input type="text" id="add-todo" placeholder="Thing To-Do">
+                            <input type="submit" value="Add" class="btn btn-primary">
+                            </form>
+                            <p>You Have: </p>
+                            <p id="counter"></p>
+                        
+                            <table>
+                            <tr class="to-do">
+                                <th><h3>Your tasks:</h3></th>
+                            </tr>
+                                <tbody id="tasks">
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div id="edit-box" role="aria-hidden">
+                            <form action="javascript:void(0);" method="POST" id="save-edit">
+                              <input type="text" id="edit-todo">
+                              <input type="submit" value="Save" class="btn btn-success"/> <a onclick="CloseInput()" aria-label="Close">&#10006;</a>
+                            </form>  
+                          </div>
+
+
+                            <!-- <div class="col-md-6 col-lg-5 d-flex align-items-stretch mb-5 mb-lg-0">
                                 <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                                     <h4 class="title d-flex justify-content-center">
                                         <p>Bahasa Inggris</p>
@@ -100,12 +133,12 @@
                                     <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
                                     <div class ="d-grid gap-2 d-sm-flex justify-content-sm-center">
                                             <button type="button" class="btn btn-danger">give up</button>
-                                            <button type="button" class="btn btn-success">kumpulkan</button>
+                                            <button type="button" class="btn btn-success">Selesai</button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
         
-                            <div class="col-md-6 col-lg-5 d-flex align-items-stretch mb-5 mb-lg-0">
+                            <!-- <div class="col-md-6 col-lg-5 d-flex align-items-stretch mb-5 mb-lg-0">
                                 <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                                     <h4 class="title d-flex justify-content-center">
                                         <p>Bahasa Inggris</p>
@@ -114,7 +147,7 @@
                                     <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
                                     <div class ="d-grid gap-2 d-sm-flex justify-content-sm-center">
                                             <button type="button" class="btn btn-danger">give up</button>
-                                            <button type="button" class="btn btn-success">kumpulkan</button>
+                                            <button type="button" class="btn btn-success">Selesai</button>
                                     </div>
                                 </div>
                             </div>
@@ -125,10 +158,10 @@
                                         <p>Bahasa Inggris</p>
                                     </h4>
                                     <a class =" d-flex justify-content-center" href="">to link soal</a>
-                                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                                    <p class="description">Vi</p>
                                     <div class ="d-grid gap-2 d-sm-flex justify-content-sm-center">
                                             <button type="button" class="btn btn-danger">give up</button>
-                                            <button type="button" class="btn btn-success">kumpulkan</button>
+                                            <button type="button" class="btn btn-success">Selesai</button>
                                     </div>
                                 </div>
                             </div>
@@ -142,11 +175,11 @@
                                     <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
                                     <div class ="d-grid gap-2 d-sm-flex justify-content-sm-center">
                                             <button type="button" class="btn btn-danger">give up</button>
-                                            <button type="button" class="btn btn-success">kumpulkan</button>
+                                            <button type="button" class="btn btn-success">Selesai</button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         
                     </div>
                 </div>
@@ -176,6 +209,33 @@
     <script src="../HomeWork/homework.js"></script>
 
 </body>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+    import { getStorage } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js";
+    
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCS35eJjz8AgFy2A2Z4GG6OgFRw2O81bT4",
+      authDomain: "letsstudy-57c49.firebaseapp.com",
+      databaseURL: "https://letsstudy-57c49-default-rtdb.firebaseio.com",
+      projectId: "letsstudy-57c49",
+      storageBucket: "letsstudy-57c49.appspot.com",
+      messagingSenderId: "944590542478",
+      appId: "1:944590542478:web:8d37d0650fc7212cb19bdf",
+      measurementId: "G-K76EDNXGW2"
+    };
+  
+    // Initialize Firebase
+    const storage = getStorage();
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
 
 </html>
 
