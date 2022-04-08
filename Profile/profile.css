@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-* {
-    text-decoration: none;
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
-body {
-    height: 100vh;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Open Sans', sans-serif;
-=======
 .header {
     transition: all 0.5s;
     z-index: 997;
@@ -23,7 +8,6 @@ body {
     background: #fff;
     padding: 15px 0;
     box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
->>>>>>> 45d59173ac106160e7f36bbcb7fdfe25d5daf8ca
 }
 
 .header .logo {
@@ -165,49 +149,6 @@ body {
     visibility: visible;
 }
 
-<<<<<<< HEAD
-.container1 p {
-    font-size: 50px;
-    color: #000000;
-}
-
-.profile-pic-div{
-    height: 200px;
-    width: 200px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    border-radius: 50%;
-    overflow: hidden;
-    border: 1px solid grey;
-}
-
-#photo{
-    height: 100%;
-    width: 100%;
-}
-
-#file{
-    display: none;
-}
-
-#uploadBtn{
-    height: 40px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    background: rgba(0, 0, 0, 0.7);
-    color: wheat;
-    line-height: 30px;
-    font-family: sans-serif;
-    font-size: 15px;
-    cursor: pointer;
-    display: none;
-=======
 @media (max-width: 1366px) {
     .navbar .dropdown .dropdown ul {
         left: -90%;
@@ -228,7 +169,6 @@ body {
     display: none;
     line-height: 0;
     transition: 0.5s;
->>>>>>> 45d59173ac106160e7f36bbcb7fdfe25d5daf8ca
 }
 
 .mobile-nav-toggle.bi-x {
@@ -348,18 +288,6 @@ body {
     font-size: 26px;
 }
 
-<<<<<<< HEAD
-/* .card-body img {
-    margin-left: 3%;
-    margin-right: 3%;
-    height: 60%;
-    width: 40%;
-    overflow: hidden;
-    float: left;
-    text-align: right;
-    border-radius: 8%;
-} */
-=======
 .hero .btn-get-started {
     margin-top: 30px;
     line-height: 0;
@@ -391,7 +319,6 @@ body {
 .hero .hero-img {
     text-align: right;
 }
->>>>>>> 45d59173ac106160e7f36bbcb7fdfe25d5daf8ca
 
 @media (min-width: 1024px) {
     .hero {

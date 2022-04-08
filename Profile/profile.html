@@ -59,14 +59,6 @@
             <div class="container">
                 <div>
                     <div class="row">
-                    <div class="col-xl col-md text-center">
-                            <div class="profile-pic-div">
-                                <img style="height: 200px; width: 200px; margin-bottom: 7%;" 
-                                src="/pict/profilepict.jpg" id="photo">
-                                <input id="fileInput" onchange="fileChangeHandler(event)" type="file" class="file">
-                            </div>
-                            <p id="name" class="h6">Hembo Tingor</p>
-                            <p id="role" >Web Designer</p>
                         <div id="profile" class="col-sm-5 text-center">
                             <div>
                                 <img
@@ -141,7 +133,6 @@
    
     <!-- end of footer -->
 
-    <script src="/Profile/profile.js"></script>
     <script src="/vendor/purecounter/purecounter.js"></script>
     <script src="/vendor/aos/aos.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -149,35 +140,7 @@
     <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="/vendor/php-email-form/validate.js"></script>
-<<<<<<< HEAD
-    <script src="file:///Volumes/SSD/letsstudy/Profile/profile.css"></script>
-    <script>
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
-        import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyCS35eJjz8AgFy2A2Z4GG6OgFRw2O81bT4",
-            authDomain: "letsstudy-57c49.firebaseapp.com",
-            databaseURL: "https://letsstudy-57c49-default-rtdb.firebaseio.com",
-            projectId: "letsstudy-57c49",
-            storageBucket: "letsstudy-57c49.appspot.com",
-            messagingSenderId: "944590542478",
-            appId: "1:944590542478:web:8d37d0650fc7212cb19bdf",
-            measurementId: "G-K76EDNXGW2"
-        };
- 
-        const firebaseApp = initializeApp(firebaseConfig);
-        const storage = getStorage(firebaseApp);
-        
-
-        function fileChangeHandler(e) {
-            console.log(e.target.files)
-        }
-    </script>
-=======
     <script src="../Profile/profile.js"></script>
->>>>>>> 45d59173ac106160e7f36bbcb7fdfe25d5daf8ca
 
 </body>
 
