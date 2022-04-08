@@ -61,12 +61,16 @@
                     <div class="row">
                         <div class="col-xl col-md text-center">
                             <div>
+                                <label> image name</label> <input type="text" id="namebox"> <label id="extlab"></label> <br><br>
                                 <img style="height: 300px; width: 300px;"
-                                    src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius"
+                                    id="myimg" class="img-radius"
                                     alt="User-Profile-Image">
                             </div>
                             <p class="h6">Hembo Tingor</p>
                             <p>Web Designer</p>
+                            <button id="selbtn"> select image</button>
+                     <button id="upbtn"> upload btn</button>
+                    <button id="downbtn"> download btn</button>
                         </div>
 
                         <div id="information" class="col-xl-6">
@@ -104,7 +108,93 @@
     <script src="/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="/vendor/php-email-form/validate.js"></script>
     <script src="../Profile/profile.js"></script>
+    
+    <script>
 
+var files = [];
+var reader = new FileReader();
+
+var namebox = document.getElementById('namebox')
+var extlab = document.getElementById('extlab')
+var myimag = document.getElementById('myimag')
+var upprogress = document.getElementById('upprogress')
+var selbtn = document.getElementById('selbtn')
+var upbtn = document.getElementById('upbtn')
+var downbtn = document.getElementById('downbtn')
+
+        var input = document.createElement('input');
+input.type = 'file';
+
+input.onchange = e =>{
+    files = e.target.files;
+
+    var extension = GetFileExt(files[0]);
+    var name = GetFileName(files[0]);
+
+    namebox.value = name;
+    extlab.innerHTML = extension;
+
+    reader.readAsDataURL(files[0]);
+}
+
+reader.onload = function(){
+    myimag.src = reader.result; 
+}
+
+
+// selection //
+
+selbtn.onclick = function(){
+    input.click();
+}
+
+function GetFileExt(file){
+    var temp = file.name.split('.');
+    var ext = temp.slice((temp.length-1), (temp.length));
+    return '.' + ext[0];
+}
+
+function GetFileName(file){
+    var temp = file.name.split('.');
+    var fname = temp.slice(0,-1).join('.');
+    return fname;
+}
+
+// upload //
+
+async function UploadProcess(){
+    var ImgToUpload = files[0];
+
+    var ImgName = namebox.value + extlab.innerHTML;
+
+    const metaData ={
+        contentType: ImgToUpload.type
+    }
+
+    const storage = getStorage();
+
+    const storageRef = sRef(storage, "Images," + ImgName);
+    
+    const uploadaTask = uploadBytesResumable(storageRef, ImgToUpload, metaData);
+
+    uploadaTask.on('state-change', (snapshot) =>{
+        var progress = (snapshot.bytesTransferred / snapshot.totalByte) * 100;
+        programlab.innerHTML = "upload" + progress + "%"
+    },
+    
+    (error)=>{
+        alert("error: image not uploaded");        
+    },
+
+    ()=>{
+        getDownloadURL(uploadaTask.snapshot.ref).then((downloadURL)=>{
+            console.log(downloadURL);
+        });
+    }
+    );
+}
+
+    </script>
 </body>
 
 </html>
