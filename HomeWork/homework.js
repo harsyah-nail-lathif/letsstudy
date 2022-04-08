@@ -91,6 +91,15 @@ function CloseInput() {
   document.getElementById('edit-box').style.display = 'none';
 }
 
+function foruser(){
+  if(uid == "user"){
+    var insertfield = document.getElementById('insertfield').value;
+    insertfield.hidden;
+  }else{
+    
+  }
+}
+
 (function() {
     "use strict";
   

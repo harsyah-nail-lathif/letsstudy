@@ -444,21 +444,8 @@ section {
     justify-content: center;
 }
 
-.secthree-con img {
-    margin: auto;    
-    display: block;
-    align-items: center;
-}
 
-.sectwo {
-    width: 100%;
-    height: 30vh;
-    background: url(../img/hero-bg.png) top center no-repeat;
-    background-color: #ffffff;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-}
+
 
 .secfour-title h2{
     font-size: 40px;
@@ -577,73 +564,67 @@ section {
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-
-.card-secfour {
-    width: 400px;
-    height: 600px;
+#about {
+    padding: 80px 0;
+  }
+  #about .about-content {
+    padding-top: 40px;
+  }
+  #about .about-content h2 {
+    color: #413e66;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+  }
+  #about .about-content h3 {
+    color: #696592;
+    font-weight: 400;
+    font-size: 22px;
+    font-style: italic;
+  }
+  #about .about-content ul {
+    list-style: none;
+    padding: 0;
+  }
+  #about .about-content ul li {
+    padding-bottom: 10px;
+  }
+  #about .about-content ul li i {
+    font-size: 20px;
+    padding-right: 4px;
+    color: #1bb1dc;
+  }
+  #about .about-img {
     position: relative;
-    padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
-}
-
-
-.ribon {
+    margin: 30px 30px 30px 30px;
+  }
+  #about .about-img img {
+    width: 100%;
+    border: 8px solid #fff;
+    transition: 0.5s;
+  }
+  #about .about-img img:hover {
+    width: 100%;
+    transform: scale(1.03);
+  }
+  #about .about-img::before {
     position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    background-color: #2b98f0;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center
-}
-
-.ribon .fas.fa-spray-can,
-.ribon .fas.fa-broom,
-.ribon .fas.fa-shower,
-.ribon .fas.fa-infinity {
-    font-size: 30px;
-    color: white
-}
-
-.card-secfour .price {
-    color: #2b98f0;
-    font-size: 30px
-}
-
-.card-secfour ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center
-}
-
-.card-secfour ul li {
-    font-size: 12px;
-    margin-bottom: 8px
-}
-
-.card-secfour:hover .fa.fa-check {
-    color: #2b98f0
-}
-
-.card-secfour .btn-secfour {
-    width: 300px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #2b98f0;
-    border: none;
-    border-radius: 0px;
-    box-shadow: none
-}
-
-@media (max-width: 600px) {
-    .card-secfour {
-        max-width: 100%
-    }
-}
+    left: -31px;
+    top: -30px;
+    width: 90%;
+    height: 92%;
+    z-index: -1;
+    content: "";
+    background-color: #ebf1fa;
+    transition: 0.5s;
+  }
+  #about .about-img::after {
+    position: absolute;
+    right: -31px;
+    bottom: -30px;
+    width: 90%;
+    height: 92%;
+    z-index: -1;
+    content: "";
+    background-color: #ebf1fa;
+    transition: 0.5s;
+  }

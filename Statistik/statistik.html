@@ -33,13 +33,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LetsStudy</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
 <body>
     <header id="header" class="header fixed-top">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="/Home/Home.html" class="logo d-flex align-items-center">
                 <span>LetsStudy</span>
             </a>
             <nav id="navbar" class="navbar">
@@ -84,21 +85,31 @@
         <section id="section2" class="services bg-light">
             <div class="container">
                 <div class="section-title mt-5" data-aos="fade-up">
-                    <h2>Note From Kamil-Trex</h2>
-                    <p>Magnam dolores commodi suscipit eius consequatur ex aliquid fug</p>
+                    <h2>Pencapaian nilai Ananda pekan ini</h2>
+                    <p>Berikut adalah pencapaian nilai anak pada pekan ini</p>
                 </div>
-                <div class="row mb-5 d-flex justify-content-center  g-4">
-                    <div class="col-md-6 col-lg-5 d-flex align-items-stretch mb-5 mb-lg-0">
+
+                <!-- <div>
+                    <canvas id="myChart"></canvas>
+                </div> -->
+
+                <div class="row mb-5 d-flex justify-content-center  g-4" data-aos="fade-up">
+
+                    <canvas id="myChart">
+                        <input type="number" id="mtk">
+                    </canvas>
+
+                    <!-- <div class="col-md-6 col-lg-5 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <h4 class="title">
                                 <p>Kamil-Trex</p>
                             </h4>
                             <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
                                 excepturi</p>
-                        </div>
+                        </div> -->
                     </div>
 
-                    <div class="col-md-6 col-lg-5 d-flex align-items-center mb-5 mb-lg-0">
+                    <!-- <div class="col-md-6 col-lg-5 d-flex align-items-center mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
                             <h4 class="title">
                                 <p>Kamil-Trex</p>
@@ -126,7 +137,7 @@
                             <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui
                                 blanditiis</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -144,6 +155,41 @@
     </footer>
     <!-- end of footer -->
 
+    <script class="title">const labels = [
+        'Matematika',
+        'Bahasa Indonesia',
+        'Bahasa Inggris',
+        'PPKN',
+        'IPS',
+        'Fisika',
+        'Biologi',
+        'Kimia'
+      ];
+    
+      const data = {
+        labels: labels,
+        datasets: [{
+          label: 'My First dataset',
+          backgroundColor: ['red', 'green', 'blue', 'yellow', 'pink', 'purple', 'cyan', 'grey'],
+          borderColor: 'rgb(255, 99, 132)',
+          data: [
+          document.getElementById('mtk').value,    
+          90, 75, 82, 80, 90, 88, 70],
+        }]
+      };
+    
+      const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+      };
+
+    const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+  
+  </script>
     <script src="../vendor/purecounter/purecounter.js"></script>
     <script src="../vendor/aos/aos.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -152,6 +198,7 @@
     <script src="../vendor/swiper/swiper-bundle.min.js"></script>
     <script src="../vendor/php-email-form/validate.js"></script>
     <script src="../Statistik/statistik.js"></script>
+    
 
 </body>
 
