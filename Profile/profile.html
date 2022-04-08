@@ -181,7 +181,7 @@
         
             uploadaTask.on('state-change', (snapshot) =>{
                 var progress = (snapshot.bytesTransferred / snapshot.totalByte) * 100;
-                programlab.innerHTML = "upload" + progress + "%"
+                proglab.innerHTML = "upload" + progress + "%"
             },
             
             (error)=>{
