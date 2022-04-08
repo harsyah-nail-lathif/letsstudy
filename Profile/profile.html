@@ -44,8 +44,8 @@
                 <ul>
                     <li><a class="nav-link scrollto" href="/Home/Home.html">Home</a></li>
                     <li><a class="nav-link scrollto" href="/Statistik/statistik.html">Statistik</a></li>
-                    <li><a class="nav-link scrollto active">Home Work</a></li>
-                    <li><a class="nav-link scrollto" href="/Profile/profile.html">Profile</a></li>
+                    <li><a class="nav-link scrollto" href="/HomeWork/homework.html">Home Work</a></li>
+                    <li><a class="nav-link scrollto active" href="/Profile/profile.html">Profile</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
@@ -69,21 +69,59 @@
                             <h2>Web Designer</h2>
                         </div>
 
-                        <div id="information" class="col-xl-6">
+                        <div id="information" class="col-md-4">
                             <h4>Information</h4>
                             <h3 >Email</h3>
                             <p class="email">mtng@gmail.com</p>
                             <h3>Nomor Telphone</h3>
                             <p>0812384765</p>
-                            <h3>Projects Recents</h3>
-                            <p>Sam Disuja</p>
+                            <h3>description</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique odio tempore nulla </p>
                         </div>
                         <!-- button logout -->
-                            
+                        <div class="col-sm-2">
+                            <button class="btn btn-primary" onclick="location.href='/Login/login.html'">Logout</button>
+                        </div>
                         
                 </div>
             </div>
             <!-- Update -->
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Update Profile</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="">Nama</label>
+                                <input type="text" class="form-control" id="nama" placeholder="Nama">
+                            </div>
+                            <div class="form-group">
+                                <label for="">description</label>
+                                <input type="text" class="form-control" id="nama" placeholder="description">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Nomor Telephone</label>
+                                <input type="text" class="form-control" id="nomor" placeholder="Nomor Telephone">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mt-2">
+                        <button class="btn btn-primary">Update</button>
+                    </div>
+                </div>
         </section>
     </main>
     <!-- back to top -->
@@ -92,9 +130,7 @@
     <!-- end of back to top -->
 
     <!-- footer  -->
-    <footer class="fixed-bottom p-5 bg-light">
-        <span class="text-muted">&copy; 2020 LetsStudy</span>
-    </footer>
+   
     <!-- end of footer -->
 
     <script src="/vendor/purecounter/purecounter.js"></script>
