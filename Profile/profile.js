@@ -1,3 +1,50 @@
+const firebaseConfig = {
+    apiKey: "AIzaSyCS35eJjz8AgFy2A2Z4GG6OgFRw2O81bT4",
+    authDomain: "letsstudy-57c49.firebaseapp.com",
+    databaseURL: "https://letsstudy-57c49-default-rtdb.firebaseio.com",
+    projectId: "letsstudy-57c49",
+    storageBucket: "letsstudy-57c49.appspot.com",
+    messagingSenderId: "944590542478",
+    appId: "1:944590542478:web:8d37d0650fc7212cb19bdf",
+    measurementId: "G-K76EDNXGW2"
+  };  
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    const database = firebase.database()
+
+    function profile() {        
+        database.ref('user').once('value')
+        .then(function (snapshot) {
+            document.getElementById('namaText').innerHTML = snapshot.val().nama        
+            document.getElementById('deskripsiText').innerHTML = snapshot.val().description
+            document.getElementById('emailText').innerHTML = snapshot.val().email
+            document.getElementById('nomorText').innerHTML = snapshot.val().nomer
+        })
+    }
+
+    function updateProfile() {
+
+        var nama = document.getElementById('nama').value;
+        var deskripsi = document.getElementById('deskripsi').value;
+        var email = document.getElementById('email').value;
+        var nomor =  document.getElementById('nomor').value;
+
+        if (document.querySelector('input').value.length == 0){
+            alert('Please fill all the data')
+        } else {
+            database.ref('user').update({
+                description: deskripsi,
+                email: email,
+                nama, nama,
+                nomer: nomor
+            }).then(
+                window.location.reload()
+            )
+        }
+
+    }
+
 (function () {
     "use strict";
 
