@@ -52,8 +52,8 @@
                 <ul>
                     <li><a class="nav-link scrollto" href="/Home/Home.html">Home</a></li>
                     <li><a class="nav-link scrollto" href="/Statistik/statistik.html">Statistik</a></li>
-                    <li><a class="nav-link scrollto" href="/HomeWork/homework.html">Home Work</a></li>
-                    <li><a class="nav-link scrollto active" href="/Profile/profile.html">Profile</a></li>
+                    <li><a class="nav-link scrollto active">Home Work</a></li>
+                    <li><a class="nav-link scrollto" href="/Profile/profile.html">Profile</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
@@ -67,12 +67,14 @@
             <div class="container">
                 <div>
                     <div class="row">
-                        <div id="profile" class="col-sm-5 text-center">
+                        <div class="col-xl col-md text-center">
                             <div>
-                                <img
-                                    src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius"
+                                <label> image name</label> <input type="text" id="namebox"> <label id="extlab"></label> <br><br>
+                                <img style="height: 300px; width: 300px;"
+                                    id="myimg" class="img-radius"
                                     alt="User-Profile-Image">
                             </div>
+<<<<<<< HEAD
                             <h3 id="namaText">Hembo Tingor</h3>
                             <h2>Web Designer</h2>
                         </div>
@@ -85,16 +87,31 @@
                             <p id="nomorText">0812384765</p>
                             <h3>description</h3>
                             <p id="deskripsiText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique odio tempore nulla </p>
+=======
+                            <p class="h6">Hembo Tingor</p>
+                            <p>Web Designer</p>
+                            <button id="selbtn"> select image</button>
+        <button id="upbtn"> upload btn</button>
+                    <button id="downbtn"> download btn</button>
                         </div>
-                        <!-- button logout -->
-                        <div class="col-sm-2">
-                            <button class="btn btn-primary" onclick="location.href='/Login/login.html'">Logout</button>
+
+                        <div id="information" class="col-xl-6">
+                            <h3>Information</h3>
+                            <h4 class="email">Email</h4>
+                            <p>mtng@gmail.com</p>
+                            <h4>Nomor Telphone</h4>
+                            <p>0812384765</p>
+                            <h4>Projects Recents</h4>
+                            <p>Sam Disuja</p>
+>>>>>>> 977af96efe23dae5279aa2ece54e5d9c5915e971
                         </div>
-                        
+                    </div>
                 </div>
+            </div>
             </div>
             <!-- Update -->
         </section>
+<<<<<<< HEAD
 
         <section>
             <div class="container">
@@ -131,6 +148,8 @@
                     </div>
                 </div>
         </section>
+=======
+>>>>>>> 977af96efe23dae5279aa2ece54e5d9c5915e971
     </main>
     <!-- back to top -->
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
@@ -138,7 +157,9 @@
     <!-- end of back to top -->
 
     <!-- footer  -->
-   
+    <footer class="fixed-bottom p-5 bg-light">
+        <span class="text-muted">&copy; 2020 LetsStudy</span>
+    </footer>
     <!-- end of footer -->
 
     <script src="/vendor/purecounter/purecounter.js"></script>
@@ -148,7 +169,102 @@
     <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="/vendor/php-email-form/validate.js"></script>
+<<<<<<< HEAD
 
+=======
+    <script src="../Profile/profile.js"></script>
+    <script type="modul">
+        
+    </script>
+    
+    <script>
+        var files = [];
+        var reader = new FileReader();
+        
+        var namebox = document.getElementById('namebox')
+        var extlab = document.getElementById('extlab')
+        var myimag = document.getElementById('myimag')
+        var upprogress = document.getElementById('upprogress')
+        var selbtn = document.getElementById('selbtn')
+        var upbtn = document.getElementById('upbtn')
+        var downbtn = document.getElementById('downbtn')
+        
+        var input = document.createElement('input');
+        input.type = 'file';
+        
+        input.onchange = e =>{
+            files = e.target.files;
+        
+            var extension = GetFileExt(files[0]);
+            var name = GetFileName(files[0]);
+        
+            namebox.value = name;
+            extlab.innerHTML = extension;
+        
+            reader.readAsDataURL(files[0]);
+        }
+        
+        reader.onload = function(){
+            myimag.src = reader.result; 
+        }
+        
+        
+        // selection //
+        
+        selbtn.onclick = function(){
+            input.click();
+        }
+        
+        function GetFileExt(file){
+            var temp = file.name.split('.');
+            var ext = temp.slice((temp.length-1), (temp.length));
+            return '.' + ext[0];
+        }
+        
+        function GetFileName(file){
+            var temp = file.name.split('.');
+            var fname = temp.slice(0,-1).join('.');
+            return fname;
+        }
+        
+        // upload //
+        
+        async function UploadProcess(){
+            var ImgToUpload = files[0];
+        
+            var ImgName = namebox.value + extlab.innerHTML;
+        
+            const metaData ={
+                contentType: ImgToUpload.type
+            }
+        
+            const storage = getStorage();
+        
+            const storageRef = sRef(storage, "Images," + ImgName);
+            
+            const uploadaTask = uploadBytesResumable(storageRef, ImgToUpload, metaData);
+        
+            uploadaTask.on('state-change', (snapshot) =>{
+                var progress = (snapshot.bytesTransferred / snapshot.totalByte) * 100;
+                proglab.innerHTML = "upload" + progress + "%"
+            },
+            
+            (error)=>{
+                alert("error: image not uploaded");        
+            },
+        
+            ()=>{
+                getDownloadURL(uploadaTask.snapshot.ref).then((downloadURL)=>{
+                    console.log(downloadURL);
+                });
+            }
+            );
+        }
+        
+        upbtn.onclick = UploadProcess;
+        
+            </script>
+>>>>>>> 977af96efe23dae5279aa2ece54e5d9c5915e971
 </body>
 
 </html>

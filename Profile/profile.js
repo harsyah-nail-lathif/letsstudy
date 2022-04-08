@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const firebaseConfig = {
     apiKey: "AIzaSyCS35eJjz8AgFy2A2Z4GG6OgFRw2O81bT4",
     authDomain: "letsstudy-57c49.firebaseapp.com",
@@ -44,6 +45,10 @@ const firebaseConfig = {
         }
 
     }
+=======
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+>>>>>>> 977af96efe23dae5279aa2ece54e5d9c5915e971
 
 (function () {
     "use strict";
