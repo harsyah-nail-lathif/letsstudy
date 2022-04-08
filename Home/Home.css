@@ -438,10 +438,29 @@ section {
     width: 100%;
     height: 20%;
     background: url(../img/hero-bg.png) top center no-repeat;
-    background-color: #BAD7FB;
+    background-color: #d8eaff;
     background-size: cover;
     display: flex;
     justify-content: center;
+}
+
+.secthree .card-body-secthree{
+    padding: 40px;
+    border: white;
+    border-radius: 20%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.secthree .card-title-secthree{
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.secthree .card-text-secthree{
+    margin: 10px;
+    font-weight: 250;
 }
 
 
@@ -521,6 +540,7 @@ section {
     align-items: center;
     margin-top: 10%;
 }
+
 
 @media (min-width: 1024px) {
     .hero {
