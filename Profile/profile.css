@@ -2,9 +2,12 @@
     text-decoration: none;
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
 body {
+    height: 100vh;
+    width: 100%;
     margin: 0px;
     padding: 0px;
     font-family: 'Open Sans', sans-serif;
@@ -100,14 +103,46 @@ section {
 }
 
 .container1 p {
-    font-size: 25px;
+    font-size: 50px;
     color: #000000;
 }
 
-.container1>img {
-    width: 50%;
-    height: 350px;
-    align-self: center;
+.profile-pic-div{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid grey;
+}
+
+#photo{
+    height: 100%;
+    width: 100%;
+}
+
+#file{
+    display: none;
+}
+
+#uploadBtn{
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: wheat;
+    line-height: 30px;
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
 }
 
 .container2 {
@@ -153,7 +188,7 @@ section {
     border-radius: 5%;
 }
 
-.card-body img {
+/* .card-body img {
     margin-left: 3%;
     margin-right: 3%;
     height: 60%;
@@ -162,7 +197,7 @@ section {
     float: left;
     text-align: right;
     border-radius: 8%;
-}
+} */
 
 .card-body p {
     color: #000000;
