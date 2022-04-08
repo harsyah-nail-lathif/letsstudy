@@ -30,11 +30,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
     <title>homework</title>
 
 </head>
 
-<body>
+<body onload="profile()">
     <header id="header" class="header fixed-top">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo d-flex align-items-center">
@@ -65,18 +68,17 @@
                                     src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius"
                                     alt="User-Profile-Image">
                             </div>
-                            <h3>Hembo Tingor</h3>
-                            <h2>Web Designer</h2>
+                            <h3 id="namaText"></h3>
                         </div>
 
                         <div id="information" class="col-md-4">
                             <h4>Information</h4>
                             <h3 >Email</h3>
-                            <p class="email">mtng@gmail.com</p>
+                            <p id="emailText" class="email"></p>
                             <h3>Nomor Telphone</h3>
-                            <p>0812384765</p>
+                            <p id="nomorText"></p>
                             <h3>description</h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique odio tempore nulla </p>
+                            <p id="deskripsiText"></p>
                         </div>
                         <!-- button logout -->
                         <div class="col-sm-2">
@@ -97,34 +99,34 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <form action="">
+                        <div action="">
                             <div class="form-group">
                                 <label for="">Nama</label>
                                 <input type="text" class="form-control" id="nama" placeholder="Nama">
                             </div>
                             <div class="form-group">
                                 <label for="">description</label>
-                                <input type="text" class="form-control" id="nama" placeholder="description">
+                                <input type="text" class="form-control" id="deskripsi" placeholder="description">
                             </div>
                             <div class="form-group">
                                 <label for="">Email</label>
                                 <input type="email" class="form-control" id="email" placeholder="Email">
                             </div>
+                        
                             <div class="form-group">
-                                <label for="">Nomor Telephone</label>
-                                <input type="text" class="form-control" id="nomor" placeholder="Nomor Telephone">
-                            </div>
+                                <label for="">Nomor Telphone</label>
+                                <input type="text" class="form-control" id="nomor" placeholder="Nomor Telphone">
                             
                             <div class="form-group">
-                                <label for="">Change Photo</label>
-                                <input type="file" class="form-control" id="photo" placeholder="Photo">
+                                <label for="">Photo Profile</label>
+                                <input type="file" class="form-control" id="photo" placeholder="Photo Profile">
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 mt-2">
-                        <button class="btn btn-primary">Update</button>
+                        <button class="btn btn-primary" onclick="updateProfile()">Update</button>
                     </div>
                 </div>
         </section>
@@ -145,6 +147,11 @@
     <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="/vendor/php-email-form/validate.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-storage.js"></script>
+
     <script src="../Profile/profile.js"></script>
 
 </body>
