@@ -357,7 +357,36 @@
 
     .hero .hero-img img {
         width: 200%;
-
     }
 }
+#information p {
+    font-size: 40px;
+    font-weight: 200;
+}
+#information h3 {
+    font-size: 50px;
+    font-weight: 600;
+}
+#information h4 {
+    font-size: 60px;
+    font-weight: 600;
+}
+#information {
+    margin-left: 100px;
+}
 
+
+#profile img {
+    width: 500px;
+    height: 500px;
+}
+
+#profile h3{
+    font-size: 50px;
+    font-weight: 600;
+}
+
+#profile h3{
+    font-size: 50px;
+    font-weight: 600;
+}
