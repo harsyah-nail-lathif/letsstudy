@@ -156,21 +156,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-storage.js"></script>
     <script src="../Profile/profile.js"></script>
     <script>
-        const display_image = document.querySelector("#display_image");
-        var upload_image;
         
-        photo.addEventListener("change", function(){
-            console.log(display_image.value); 
-            const reader = new FileReader();
-            reader.addEventListener("load", () => {
-                display_image = reader.result;
-
-            document.querySelector("#display_image").
-            style.background = 
-            'url(${uploaded_image})';
-            });
-            reader.readAsDataURL(this.files[0]);
-        });
     </script>
 </body>
 

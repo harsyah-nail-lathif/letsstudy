@@ -42,6 +42,23 @@ const firebaseConfig = {
                 window.location.reload()
             )
         }
+
+        const display_image = document.querySelector("#display_image");
+        var upload_image;
+        
+        photo.addEventListener("change", function(){
+            console.log(display_image.value); 
+            const reader = new FileReader();
+            reader.addEventListener("load", () => {
+                display_image = reader.result;
+
+            document.querySelector("#display_image").
+            style.background = 
+            'url(${uploaded_image})';
+            });
+            reader.readAsDataURL(this.files[0]);
+        });
+
     }
 
 (function () {
