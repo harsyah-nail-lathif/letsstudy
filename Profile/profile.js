@@ -1,3 +1,6 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+
 (function () {
     "use strict";
 
