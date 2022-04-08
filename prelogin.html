@@ -146,8 +146,8 @@
 
     <div id="placeholder">
       <div id="loginsec">
-      <input id="username" type="text" name="email" placeholder="email">
-      <input id="password" type="password" name="password"  placeholder="password">
+      <input id="logusername" type="text" name="email" placeholder="email">
+      <input id="logpassword" type="password" name="password"  placeholder="password">
       <button id="buttonlogin" value="login"> Login </button>
     </div> 
     <div id="signupsec">
@@ -300,7 +300,8 @@ signup.addEventListener('click',(e)=>{
        // Signed in 
         const user = userCredential.user;
   
-        set(ref(database, 'users/' + user.uid),{
+       
+        set(ref(database, 'user/' + user.uid),{
             username: username,
             email: email
         })
@@ -333,6 +334,8 @@ signup.addEventListener('click',(e)=>{
           })
   
            alert('User loged in!');
+
+           location.href = '/Home/Home.html'
           // ...
         })
         .catch((error) => {

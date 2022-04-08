@@ -42,36 +42,6 @@ const firebaseConfig = {
                 window.location.reload()
             )
         }
-
-        input.onchange = e =>{
-            files = e.target.files;
-        
-            var extension = GetFileExt(files[0]);
-            var name = GetFileName(files[0]);
-        
-            namebox.value = name;
-            extlab.innerHTML = extension;
-        
-            reader.readAsDataURL(files[0]);
-        }
-        reader.onload = function(){
-            myimag.src = reader.result; 
-        }
-        selbtn.onclick = function(){
-            input.click();
-        }
-        
-        function GetFileExt(file){
-            var temp = file.name.split('.');
-            var ext = temp.slice((temp.length-1), (temp.length));
-            return '.' + ext[0];
-        }
-        
-        function GetFileName(file){
-            var temp = file.name.split('.');
-            var fname = temp.slice(0,-1).join('.');
-            return fname;
-        }
     }
 
 (function () {

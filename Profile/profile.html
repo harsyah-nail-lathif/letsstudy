@@ -65,7 +65,8 @@
                         <div id="profile" class="col-sm-5 text-center">
                             <div>
                                 <img
-                                    id="img" class="img-radius">
+                                    id="display_image" class="img-radius">
+                                    <input type="text" id="namebox" style="visibility: hidden;"> 
                             </div>
                             <h3 id="namaText"></h3>
                         </div>
@@ -81,7 +82,7 @@
                         </div>
                         <!-- button logout -->
                         <div class="col-sm-2">
-                            <button class="btn btn-primary" onclick="location.href='/Login/login.html'">Logout</button>
+                            <button class="btn btn-primary" onclick="location.href='/prelogin.html'">Logout</button>
                         </div>
                         
                 </div>
@@ -121,7 +122,7 @@
                                 <input type="text" class="form-control" id="nomor" placeholder="Nomor Telphone">
                             <div class="form-group">
                                 <label for="">Photo Profile</label>
-                                <input type="file" class="form-control" id="photo" placeholder="Photo Profile">
+                                <input type="file" accept="image/png, image/jpg" class="form-control" id="photo" placeholder="Photo Profile">
                             </div>
                         </div>
                     </div>
@@ -153,46 +154,23 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-storage.js"></script>
-
     <script src="../Profile/profile.js"></script>
     <script>
-        var input = document.createElement('input');
-input.type = 'file';
+        const display_image = document.querySelector("#display_image");
+        var upload_image;
+        
+        photo.addEventListener("change", function(){
+            console.log(display_image.value); 
+            const reader = new FileReader();
+            reader.addEventListener("load", () => {
+                display_image = reader.result;
 
-input.onchange = e =>{
-    files = e.target.files;
-
-    var extension = GetFileExt(files[0]);
-    var name = GetFileName(files[0]);
-
-    namebox.value = name;
-    extlab.innerHTML = extension;
-
-    reader.readAsDataURL(files[0]);
-}
-
-reader.onload = function(){
-    myimag.src = reader.result; 
-}
-
-// selection //
-
-selbtn.onclick = function(){
-    input.click();
-}
-
-function GetFileExt(file){
-    var temp = file.name.split('.');
-    var ext = temp.slice((temp.length-1), (temp.length));
-    return '.' + ext[0];
-}
-
-function GetFileName(file){
-    var temp = file.name.split('.');
-    var fname = temp.slice(0,-1).join('.');
-    return fname;
-}
-
+            document.querySelector("#display_image").
+            style.background = 
+            'url(${uploaded_image})';
+            });
+            reader.readAsDataURL(this.files[0]);
+        });
     </script>
 </body>
 
