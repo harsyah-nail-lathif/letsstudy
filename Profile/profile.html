@@ -30,19 +30,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-storage.js"></script>
-
-    <script src="../Profile/profile.js"></script>
-
-
     <title>homework</title>
 
 </head>
 
-<body onload="profile()">
+<body>
     <header id="header" class="header fixed-top">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo d-flex align-items-center">
@@ -52,8 +44,8 @@
                 <ul>
                     <li><a class="nav-link scrollto" href="/Home/Home.html">Home</a></li>
                     <li><a class="nav-link scrollto" href="/Statistik/statistik.html">Statistik</a></li>
-                    <li><a class="nav-link scrollto active">Home Work</a></li>
-                    <li><a class="nav-link scrollto" href="/Profile/profile.html">Profile</a></li>
+                    <li><a class="nav-link scrollto" href="/HomeWork/homework.html">Home Work</a></li>
+                    <li><a class="nav-link scrollto active" href="/Profile/profile.html">Profile</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
@@ -67,51 +59,34 @@
             <div class="container">
                 <div>
                     <div class="row">
-                        <div class="col-xl col-md text-center">
+                        <div id="profile" class="col-sm-5 text-center">
                             <div>
-                                <label> image name</label> <input type="text" id="namebox"> <label id="extlab"></label> <br><br>
-                                <img style="height: 300px; width: 300px;"
-                                    id="myimg" class="img-radius"
+                                <img
+                                    src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius"
                                     alt="User-Profile-Image">
                             </div>
-<<<<<<< HEAD
-                            <h3 id="namaText">Hembo Tingor</h3>
+                            <h3>Hembo Tingor</h3>
                             <h2>Web Designer</h2>
                         </div>
 
                         <div id="information" class="col-md-4">
                             <h4>Information</h4>
                             <h3 >Email</h3>
-                            <p id="emailText" class="email">mtng@gmail.com</p>
+                            <p class="email">mtng@gmail.com</p>
                             <h3>Nomor Telphone</h3>
-                            <p id="nomorText">0812384765</p>
-                            <h3>description</h3>
-                            <p id="deskripsiText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique odio tempore nulla </p>
-=======
-                            <p class="h6">Hembo Tingor</p>
-                            <p>Web Designer</p>
-                            <button id="selbtn"> select image</button>
-        <button id="upbtn"> upload btn</button>
-                    <button id="downbtn"> download btn</button>
-                        </div>
-
-                        <div id="information" class="col-xl-6">
-                            <h3>Information</h3>
-                            <h4 class="email">Email</h4>
-                            <p>mtng@gmail.com</p>
-                            <h4>Nomor Telphone</h4>
                             <p>0812384765</p>
-                            <h4>Projects Recents</h4>
-                            <p>Sam Disuja</p>
->>>>>>> 977af96efe23dae5279aa2ece54e5d9c5915e971
+                            <h3>description</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique odio tempore nulla </p>
                         </div>
-                    </div>
+                        <!-- button logout -->
+                        <div class="col-sm-2">
+                            <button class="btn btn-primary" onclick="location.href='/Login/login.html'">Logout</button>
+                        </div>
+                        
                 </div>
-            </div>
             </div>
             <!-- Update -->
         </section>
-<<<<<<< HEAD
 
         <section>
             <div class="container">
@@ -122,14 +97,14 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <div action="">
+                        <form action="">
                             <div class="form-group">
                                 <label for="">Nama</label>
                                 <input type="text" class="form-control" id="nama" placeholder="Nama">
                             </div>
                             <div class="form-group">
                                 <label for="">description</label>
-                                <input type="text" class="form-control" id="deskripsi" placeholder="description">
+                                <input type="text" class="form-control" id="nama" placeholder="description">
                             </div>
                             <div class="form-group">
                                 <label for="">Email</label>
@@ -139,17 +114,20 @@
                                 <label for="">Nomor Telephone</label>
                                 <input type="text" class="form-control" id="nomor" placeholder="Nomor Telephone">
                             </div>
-                        </div>
+                            
+                            <div class="form-group">
+                                <label for="">Change Photo</label>
+                                <input type="file" class="form-control" id="photo" placeholder="Photo">
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 mt-2">
-                        <button class="btn btn-primary" onclick="updateProfile()">Update</button>
+                        <button class="btn btn-primary">Update</button>
                     </div>
                 </div>
         </section>
-=======
->>>>>>> 977af96efe23dae5279aa2ece54e5d9c5915e971
     </main>
     <!-- back to top -->
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
@@ -157,9 +135,7 @@
     <!-- end of back to top -->
 
     <!-- footer  -->
-    <footer class="fixed-bottom p-5 bg-light">
-        <span class="text-muted">&copy; 2020 LetsStudy</span>
-    </footer>
+   
     <!-- end of footer -->
 
     <script src="/vendor/purecounter/purecounter.js"></script>
@@ -169,102 +145,8 @@
     <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="/vendor/php-email-form/validate.js"></script>
-<<<<<<< HEAD
-
-=======
     <script src="../Profile/profile.js"></script>
-    <script type="modul">
-        
-    </script>
-    
-    <script>
-        var files = [];
-        var reader = new FileReader();
-        
-        var namebox = document.getElementById('namebox')
-        var extlab = document.getElementById('extlab')
-        var myimag = document.getElementById('myimag')
-        var upprogress = document.getElementById('upprogress')
-        var selbtn = document.getElementById('selbtn')
-        var upbtn = document.getElementById('upbtn')
-        var downbtn = document.getElementById('downbtn')
-        
-        var input = document.createElement('input');
-        input.type = 'file';
-        
-        input.onchange = e =>{
-            files = e.target.files;
-        
-            var extension = GetFileExt(files[0]);
-            var name = GetFileName(files[0]);
-        
-            namebox.value = name;
-            extlab.innerHTML = extension;
-        
-            reader.readAsDataURL(files[0]);
-        }
-        
-        reader.onload = function(){
-            myimag.src = reader.result; 
-        }
-        
-        
-        // selection //
-        
-        selbtn.onclick = function(){
-            input.click();
-        }
-        
-        function GetFileExt(file){
-            var temp = file.name.split('.');
-            var ext = temp.slice((temp.length-1), (temp.length));
-            return '.' + ext[0];
-        }
-        
-        function GetFileName(file){
-            var temp = file.name.split('.');
-            var fname = temp.slice(0,-1).join('.');
-            return fname;
-        }
-        
-        // upload //
-        
-        async function UploadProcess(){
-            var ImgToUpload = files[0];
-        
-            var ImgName = namebox.value + extlab.innerHTML;
-        
-            const metaData ={
-                contentType: ImgToUpload.type
-            }
-        
-            const storage = getStorage();
-        
-            const storageRef = sRef(storage, "Images," + ImgName);
-            
-            const uploadaTask = uploadBytesResumable(storageRef, ImgToUpload, metaData);
-        
-            uploadaTask.on('state-change', (snapshot) =>{
-                var progress = (snapshot.bytesTransferred / snapshot.totalByte) * 100;
-                proglab.innerHTML = "upload" + progress + "%"
-            },
-            
-            (error)=>{
-                alert("error: image not uploaded");        
-            },
-        
-            ()=>{
-                getDownloadURL(uploadaTask.snapshot.ref).then((downloadURL)=>{
-                    console.log(downloadURL);
-                });
-            }
-            );
-        }
-        
-        upbtn.onclick = UploadProcess;
-        
-            </script>
->>>>>>> 977af96efe23dae5279aa2ece54e5d9c5915e971
+
 </body>
 
 </html>
