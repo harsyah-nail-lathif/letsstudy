@@ -441,7 +441,7 @@ section {
     height: 100vh;
     background: url(../img/hero-bg.png) top center no-repeat;
     background-size: cover;
-    background-color: #EDD3BC;
+    background-color: #fff;
 }
 
 .hero h1 {
