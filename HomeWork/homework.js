@@ -1,50 +1,26 @@
-const firebaseConfig = {
-  apiKey: "AIzaSyCS35eJjz8AgFy2A2Z4GG6OgFRw2O81bT4",
-  authDomain: "letsstudy-57c49.firebaseapp.com",
-  databaseURL: "https://letsstudy-57c49-default-rtdb.firebaseio.com",
-  projectId: "letsstudy-57c49",
-  storageBucket: "letsstudy-57c49.appspot.com",
-  messagingSenderId: "944590542478",
-  appId: "1:944590542478:web:8d37d0650fc7212cb19bdf",
-  measurementId: "G-K76EDNXGW2"
-};
-
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
 
 var app = new function() {
+  this.el = document.getElementById('tasks');
+
   this.tasks = [];
 
+  
+  
   this.FetchAll = function() {
-    database.ref('user').child('homework').once('value').then(function (snapshot) {
-      this.el = document.getElementById('tasks');
-      var data = '';
-      if (snapshot.val() && snapshot.val().length > 0) {
-        for (i = 0; i < snapshot.val().length; i++) {
-          data += '<tr>';
-          data += '<td>'+(i+1)+". " + snapshot.val()[i] + '</td>';
-          data += '<td><button onclick="app.Edit(' + i + ')"  class="btn btn-warning">Edit</button></td>';
-          data += '<td><button onclick="app.Delete(' + i + ')"  class="btn btn-danger">Done</button></td>';
-          data += '</tr>';
-        }
-        
-        return this.el.innerHTML = data;
+    var data = '';
+
+    if (this.tasks.length > 0) {
+      for (i = 0; i < this.tasks.length; i++) {
+        data += '<tr>';
+        data += '<td>'+(i+1)+". " + this.tasks[i] + '</td>';
+        data += '<td><button onclick="app.Edit(' + i + ')"  class="btn btn-warning">Edit</button></td>';
+        data += '<td><button onclick="app.Delete(' + i + ')"  class="btn btn-danger">Done</button></td>';
+        data += '</tr>';
       }
-    });
+    }
 
-    // if (this.tasks.length > 0) {
-    //   for (i = 0; i < this.tasks.length; i++) {
-    //     data += '<tr>';
-    //     data += '<td>'+(i+1)+". " + this.tasks[i] + '</td>';
-    //     data += '<td><button onclick="app.Edit(' + i + ')"  class="btn btn-warning">Edit</button></td>';
-    //     data += '<td><button onclick="app.Delete(' + i + ')"  class="btn btn-danger">Done</button></td>';
-    //     data += '</tr>';
-    //   }
-    // }
-
-    // console.log(this.tasks.length)
-    // this.Count(this.tasks.length);
-    // return this.el.innerHTML = data;
+    this.Count(this.tasks.length);
+    return this.el.innerHTML = data;
   };
 
   this.Add = function () {
@@ -55,8 +31,6 @@ var app = new function() {
     if (task) {
       // Add the new value
       this.tasks.push(task.trim());
-      database.ref('user').child('homework').set(this.tasks);
-
       // Reset input value
       el.value = '';
       // Dislay the new list
