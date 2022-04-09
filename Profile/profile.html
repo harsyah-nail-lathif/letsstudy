@@ -30,11 +30,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
     <title>homework</title>
 
 </head>
 
-<body>
+<body onload="profile()">
     <header id="header" class="header fixed-top">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo d-flex align-items-center">
@@ -44,8 +47,8 @@
                 <ul>
                     <li><a class="nav-link scrollto" href="/Home/Home.html">Home</a></li>
                     <li><a class="nav-link scrollto" href="/Statistik/statistik.html">Statistik</a></li>
-                    <li><a class="nav-link scrollto active">Home Work</a></li>
-                    <li><a class="nav-link scrollto" href="/Profile/profile.html">Profile</a></li>
+                    <li><a class="nav-link scrollto" href="/HomeWork/homework.html">Home Work</a></li>
+                    <li><a class="nav-link scrollto active" href="/Profile/profile.html">Profile</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
@@ -62,28 +65,73 @@
                         <div id="profile" class="col-sm-5 text-center">
                             <div>
                                 <img
-                                    src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius"
-                                    alt="User-Profile-Image">
+                                    id="display_image" class="img-radius">
+                                    <input type="text" id="namebox" style="visibility: hidden;"> 
                             </div>
-                            <h3>Hembo Tingor</h3>
-                            <h2>Web Designer</h2>
+                            <h3 id="namaText"></h3>
                         </div>
 
-                        <div id="information" class="col-xl-6">
+                        <div id="information" class="col-md-4">
                             <h4>Information</h4>
                             <h3 >Email</h3>
-                            <p class="email">mtng@gmail.com</p>
+                            <p id="emailText" class="email"></p>
                             <h3>Nomor Telphone</h3>
-                            <p>0812384765</p>
-                            <h3>Projects Recents</h3>
-                            <p>Sam Disuja</p>
+                            <p id="nomorText"></p>
+                            <h3>description</h3>
+                            <p id="deskripsiText"></p>
                         </div>
                         <!-- button logout -->
-                            
+                        <div class="col-sm-2">
+                            <button class="btn btn-primary" onclick="location.href='/prelogin.html'">Logout</button>
+                        </div>
                         
                 </div>
             </div>
             <!-- Update -->
+        </section>
+        <style>
+            img{
+        height: 200px; width: 200px;
+        border-radius: 2px black solid;
+    }
+        </style>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Update Profile</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div action="">
+                            <div class="form-group">
+                                <label for="">Nama</label>
+                                <input type="text" class="form-control" id="nama" placeholder="Nama">
+                            </div>
+                            <div class="form-group">
+                                <label for="">description</label>
+                                <input type="text" class="form-control" id="deskripsi" placeholder="description">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Nomor Telphone</label>
+                                <input type="text" class="form-control" id="nomor" placeholder="Nomor Telphone">
+                            <div class="form-group">
+                                <label for="">Photo Profile</label>
+                                <input type="file" accept="image/png, image/jpg" class="form-control" id="photo" placeholder="Photo Profile">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mt-2">
+                        <button class="btn btn-primary" onclick="updateProfile()">Update</button>
+                    </div>
+                </div>
         </section>
     </main>
     <!-- back to top -->
@@ -92,9 +140,7 @@
     <!-- end of back to top -->
 
     <!-- footer  -->
-    <footer class="fixed-bottom p-5 bg-light">
-        <span class="text-muted">&copy; 2020 LetsStudy</span>
-    </footer>
+   
     <!-- end of footer -->
 
     <script src="/vendor/purecounter/purecounter.js"></script>
@@ -104,8 +150,14 @@
     <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="/vendor/php-email-form/validate.js"></script>
-    <script src="../Profile/profile.js"></script>
 
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-storage.js"></script>
+    <script src="../Profile/profile.js"></script>
+    <script>
+        
+    </script>
 </body>
 
 </html>

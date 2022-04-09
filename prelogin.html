@@ -146,8 +146,8 @@
 
     <div id="placeholder">
       <div id="loginsec">
-      <input id="username" type="text" name="email" placeholder="email">
-      <input id="password" type="password" name="password"  placeholder="password">
+      <input id="logusername" type="text" name="email" placeholder="email">
+      <input id="logpassword" type="password" name="password"  placeholder="password">
       <button id="buttonlogin" value="login"> Login </button>
     </div> 
     <div id="signupsec">
@@ -268,15 +268,11 @@ signup.addEventListener('click',(e)=>{
   </script> -->
   
   <script type="module">
-    // Import the functions you need from the SDKs you need
+    
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
     import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  //AIzaSyDFEJzDpEc3wgzL8fYHJ9ttzyyQpABPkhE
-  //AIzaSyCS35eJjz8AgFy2A2Z4GG6OgFRw2O81bT4
-    // Your web app's Firebase configuration
+ 
     const firebaseConfig = {
     apiKey: "AIzaSyCS35eJjz8AgFy2A2Z4GG6OgFRw2O81bT4",
     authDomain: "letsstudy-57c49.firebaseapp.com",
@@ -304,7 +300,8 @@ signup.addEventListener('click',(e)=>{
        // Signed in 
         const user = userCredential.user;
   
-        set(ref(database, 'users/' + user.uid),{
+       
+        set(ref(database, 'user/' + user.uid),{
             username: username,
             email: email
         })
@@ -337,6 +334,8 @@ signup.addEventListener('click',(e)=>{
           })
   
            alert('User loged in!');
+
+           location.href = '/Home/Home.html'
           // ...
         })
         .catch((error) => {
