@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="mb-5">
+        <h3 class="mb-3">Sign Up</h3>
+        <input type="text" placeholder="Fullname" id="nameInp" class="form-control mb-3">
+        <input type="text" placeholder="Email" id="emailInp" class="form-control mb-3">
+        <input type="text" placeholder="Username" id="userInp" class="form-control mb-3">
+        <input type="text" placeholder="Password" id="passInp" class="form-control mb-3">
+        <button type="button" id="sub_btn" class="btn w-100 btn-outline-primary mb-3">Sign Up</button>
+        <a href="login.html" class="badge bg-secondary py-1 w-100">Already Have An Account?</a>
+
+    </div>
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBEbdB8M4pkRHpRXqVrzGZ9fbv-ZCwnNgs",
+  authDomain: "letsstudy-63ea3.firebaseapp.com",
+  databaseURL: "https://letsstudy-63ea3-default-rtdb.firebaseio.com",
+  projectId: "letsstudy-63ea3",
+  storageBucket: "letsstudy-63ea3.appspot.com",
+  messagingSenderId: "886268922578",
+  appId: "1:886268922578:web:382a24bd2961b65042fb0b",
+  measurementId: "G-7GNWWZND06"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+        const db = getDatabase();
+
+
+
+
+        const name = document.getElementById('nameInp');
+        const email = document.getElementById('emailInp');
+        const username = document.getElementById('userInp');
+        const pass = document.getElementById('passInp');
+        const submit = document.getElementById('sub_btn');
+
+
+        function  Validation(){
+            let nameregex = /^[a-zA-Z\s]+$/;
+            let emailregex = /^[a -zA-Z0-9]+@\.(gmail|yahoo|outlook)\.com$/;
+            let userregex= /^[]a-zA-Z0-9(5,)$/;
+            
+            if(!nameregex.test(name.value)){
+                alert("the name should only contain alphabets!");
+                return false;
+            }
+
+            if(!emailregex.test(email.value)){
+                alert("enter valid email");
+                return false;
+            }
+
+            if(!userregex.test(username.value)){
+                alert("username can be only be alphanumberic\n-username must be atleast 5 characters\n-username cannot contain spaces");
+                return false;
+            }
+
+            return true;
+
+            
+        }
+
+
+        function RegisterUser(){
+            if(!Validation()){
+                return;
+            }
+            
+            const dbRef = ref(db);
+            
+            get(child(dbRef, "UsersList/"+ username.value)).then((snapshot)=>{
+                if (snapshot.exists()) {
+                    alert("Account Already Exist");
+                }
+
+                else{
+                    set(ref(db, "UsersList/"+ username.value),
+                    {
+                        fullname: name.value,
+                        email: email.value,
+                        username: username.value,
+                        fullname: name.value,                        
+                    })
+                    .then(()=>{
+                        alert("user added success");
+                    })
+                    .catch((error)=>{
+                        alert("error"+ error);
+                    })
+                }
+            });
+        }
+
+
+
+        submit.addEventListener('click', RegisterUser);
+      </script>
+</body>
+
+</html>
