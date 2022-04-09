@@ -42,6 +42,10 @@
       align-content: center;
       justify-content: center;
     }
+    #tittle p{
+      font-size: 30px;
+      color: white;
+    }
 
     #loginbutton{
       width: 50%; height: 10%;
@@ -109,7 +113,7 @@
 
     #loginbox {
       position: absolute;
-      top: 5%; left: 60%;
+      top: 5%; left: 40%;
       width: 450px; height: 600px;
       z-index: 10;
       background: white;
@@ -138,9 +142,10 @@
     }
   </style>
 </head>
-<img id="image" src="pict/pngpict.jpg">
 <div id="loginbox">
-    <div id="tittle">let's study</div>
+    <div id="tittle">
+      <p>let's study</p> 
+    </div>
     <button id="loginbutton" onclick="reverseslide()">login</button>
     <button id="signupbutton" onclick="slide()">signup</button>
 
