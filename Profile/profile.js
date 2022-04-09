@@ -51,20 +51,20 @@ const firebaseConfig = {
         var deskripsi = document.getElementById('deskripsi').value;
         var email = document.getElementById('email').value;
         var nomor = document.getElementById('nomor').value;
-        var files = document.getElementById('photo').files[0];
+        // var files = document.getElementById('photo').files[0];
         
         if (document.querySelector('input').value.length == 0){
             alert('Please fill all the data')
         } else {
-            storageRef.child(files.name).put(files, {
-                contentType: 'image/png',
-            });
+            // storageRef.child(files.name).put(files, {
+            //     contentType: 'image/png',
+            // });
             database.ref('user').update({
                 description: deskripsi,
                 email: email,
                 nama, nama,
                 nomer: nomor,
-                photo: files.name
+                // photo: files.name
             }).then(
                 window.location.reload()
             )

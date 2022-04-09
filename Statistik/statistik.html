@@ -33,12 +33,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LetsStudy</title>
-    <link href='/pict/icon.svg' rel='shortcut icon'>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
-<body>
+<body onload="onLoadStatistic()">
     <header id="header" class="header fixed-top">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
             <a href="/Home/Home.html" class="logo d-flex align-items-center">
@@ -48,7 +47,7 @@
                 <ul>
                     <li><a class="nav-link scrollto" href="/Home/Home.html">Home</a></li>
                     <li><a class="nav-link scrollto active">Statistik</a></li>
-                    <li><a class="nav-link scrollto" href="../HomeWork/homework.html">Home Work</a></li>
+                    <li><a class="nav-link scrollto" href="../HomeWork/homework.html">The Note</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/profile.html">Profile</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -142,6 +141,33 @@
                 </div>
             </div>
         </section>
+        <section id="section2" class="services bg-light">
+            <div class="container">
+                <div class="section-title mt-5" data-aos="fade-up">
+                    <h2>Input Nilai Pelajaran</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div action="">
+                            <div class="form-group">
+                                <label for="">Mata Pelajaran</label>
+                                <input type="text" class="form-control" id="nama" placeholder="Mata Pelajaran">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Nilai</label>
+                                <input type="text" class="form-control" id="nilai" placeholder="Nilai">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mt-2 mb-4">
+                        <button class="btn btn-primary" onclick="addValues()">Submit</button>
+                        <button class="btn btn-danger" onclick="deleteValues()">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <!-- back to top -->
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
@@ -156,41 +182,6 @@
     </footer>
     <!-- end of footer -->
 
-    <script class="title">const labels = [
-        'Matematika',
-        'Bahasa Indonesia',
-        'Bahasa Inggris',
-        'PPKN',
-        'IPS',
-        'Fisika',
-        'Biologi',
-        'Kimia'
-      ];
-    
-      const data = {
-        labels: labels,
-        datasets: [{
-          label: 'My First dataset',
-          backgroundColor: ['red', 'green', 'blue', 'yellow', 'pink', 'purple', 'cyan', 'grey'],
-          borderColor: 'rgb(255, 99, 132)',
-          data: [
-          document.getElementById('mtk').value,    
-          90, 75, 82, 80, 90, 88, 70],
-        }]
-      };
-    
-      const config = {
-        type: 'bar',
-        data: data,
-        options: {}
-      };
-
-    const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
-  
-  </script>
     <script src="../vendor/purecounter/purecounter.js"></script>
     <script src="../vendor/aos/aos.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -198,9 +189,110 @@
     <script src="../vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="../vendor/swiper/swiper-bundle.min.js"></script>
     <script src="../vendor/php-email-form/validate.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
     <script src="../Statistik/statistik.js"></script>
-    
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCS35eJjz8AgFy2A2Z4GG6OgFRw2O81bT4",
+            authDomain: "letsstudy-57c49.firebaseapp.com",
+            databaseURL: "https://letsstudy-57c49-default-rtdb.firebaseio.com",
+            projectId: "letsstudy-57c49",
+            storageBucket: "letsstudy-57c49.appspot.com",
+            messagingSenderId: "944590542478",
+            appId: "1:944590542478:web:8d37d0650fc7212cb19bdf",
+            measurementId: "G-K76EDNXGW2"
+            };  
 
+            // Initialize Firebase
+            const firebaseApp = firebase.initializeApp(firebaseConfig);
+            const database = firebase.database();
+
+            let arrData = [];
+            
+            function onLoadStatistic() {
+                database.ref('user').child('statistic').once('value').then(function (snapshot) {
+                    if (snapshot.val()!==null) {
+                        let labels = snapshot.val().map((val) => {return val.nama}); 
+                        let nilai  = snapshot.val().map((val) => {return val.nilai}); 
+
+                        const data = {
+                            labels: labels,
+                            datasets: [{
+                                label: 'My First dataset',
+                                backgroundColor: ['red', 'green', 'blue', 'yellow', 'pink', 'purple', 'cyan', 'grey'],
+                                borderColor: 'rgb(255, 99, 132)',
+                                data: nilai,
+                            }]
+                        };
+
+                        const config = {
+                            type: 'bar',
+                            data: data,
+                            options: {}
+                        };
+
+                        const myChart = new Chart(
+                            document.getElementById('myChart'),
+                            config
+                        );
+                    }
+                });
+            }
+
+            function addValues() {
+                var nama = document.getElementById('nama').value;
+                var nilai = document.getElementById('nilai').value;
+                
+                arrData.push({nama:nama, nilai:nilai});
+                database.ref('user').child('statistic').set(arrData);
+                this.onLoadStatistic()
+
+                document.getElementById('nama').value = '';
+                document.getElementById('nilai').value = '';
+            }
+
+            function deleteValues() {
+                database.ref('user').child('statistic').remove();
+            }
+    </script>
+    <script class="title">
+        // const labels = [
+        //     'Matematika',
+        //     'Bahasa Indonesia',
+        //     'Bahasa Inggris',
+        //     'PPKN',
+        //     'IPS',
+        //     'Fisika',
+        //     'Biologi',
+        //     'Kimia'
+        // ];
+        
+        // const data = {
+        //     labels: labels,
+        //     datasets: [{
+        //         label: 'My First dataset',
+        //         backgroundColor: ['red', 'green', 'blue', 'yellow', 'pink', 'purple', 'cyan', 'grey'],
+        //         borderColor: 'rgb(255, 99, 132)',
+        //         data: [
+        //         document.getElementById('mtk').value,    
+        //         90, 75, 82, 80, 90, 88, 70],
+        //     }]
+        // };
+
+        // const config = {
+        //     type: 'bar',
+        //     data: data,
+        //     options: {}
+        // };
+    
+        // const myChart = new Chart(
+        //     document.getElementById('myChart'),
+        //     config
+        // );
+    
+        
+      </script>
 </body>
 
 </html>
