@@ -6,19 +6,19 @@
 
     <link href="../vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="../vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> 
-    
+    <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
     <!--import css-->
     <link rel="stylesheet" href="../HomeWork/homework.css">
     <link rel="stylesheet" href="../HomeWork/style.css">
 
-    <!--cdn bootstrap 5 --> 
+    <!--cdn bootstrap 5 -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <!--the end of cdn bootstrap5-->
 
     <!-- aos cdn -->
-    <link href="../vendor/aos/aos.css" rel="stylesheet"> 
+    <link href="../vendor/aos/aos.css" rel="stylesheet">
     <!-- the end of cdn aos -->
 
     <!--cdn Jquery-->
@@ -26,7 +26,7 @@
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
     <!--the end of cdn Jquery-->
-    
+
 
     <!--the end of link link to css and js-->
 
@@ -82,74 +82,52 @@
         </section>
 
         <!-- section 2 -->
-            <section id="section" class="services bg-light">
-                <div class="container mt-5">
-                    <div data-aos="fade-up">
-                        <h2>Task Form your teachers</h2>
-                        <p>Kerjain sampe tipes</p>
-                    </div>
+        <section id="section" class="services bg-light">
+            <div class="container mt-5">
+                <div data-aos="fade-up">
+                    <h2>Task Form your teachers</h2>
+                    <p>Kerjain sampe tipes</p>
+                </div>
 
 
-                    
-                    <div class="container">
-                        <div class="row mb-5 mt-2 d-flex justify-content-center g-5">
-                        
+
+                <div class="container">
+                    <div class="row mb-5 mt-2 d-flex justify-content-center g-5">
+
                         <div id="insertfield" class="form">
-                            <form action="javascript:void(0);" method="POST" onsubmit="app.Add()"> 
-                            <input type="text" id="add-todo" placeholder="Thing To-Do">
-                            <input type="submit" value="Add" class="btn btn-primary">
+                            
+                            <form action="javascript:void(0);" method="POST" onsubmit="app.Add()">
+                                <input type="text" id="add-todo" placeholder="Thing To-Do">
+                                <input type="submit" value="Add" class="btn btn-primary">
                             </form>
+
                             <p>You Have: </p>
                             <p id="counter"></p>
-                        
+
                             <table>
-                            <tr class="to-do">
-                                <th><h3>Your tasks:</h3></th>
-                            </tr>
+                                <tr class="to-do">
+                                    <th>
+                                        <h3>Your tasks:</h3>
+                                    </th>
+                                </tr>
                                 <tbody id="tasks">
+
                                 </tbody>
 
-                                <table class="table">
-                                    <thead>
-                                      <tr>
-                                        <th scope="col">Jenis Soal</th>
-                                        <th scope="col">Link Soal</th>
-                                        <th scope="col">Link Jawaban</th>
-                                        <th scope="col">Kolom Aksi</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">3</th>
-                                        <td colspan="2">Larry the Bird</td>
-                                        <td>@twitter</td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
+                                
                             </table>
                         </div>
-                        
+
                         <div id="edit-box" role="aria-hidden">
                             <form action="javascript:void(0);" method="POST" id="save-edit">
-                              <input type="text" id="edit-todo">
-                              <input type="submit" value="Save" class="btn btn-success"/> <a onclick="CloseInput()" aria-label="Close">&#10006;</a>
-                            </form>  
-                          </div>
+                                <input type="text" id="edit-todo">
+                                <input type="submit" value="Save" class="btn btn-success" /> <a onclick="CloseInput()"
+                                    aria-label="Close">&#10006;</a>
+                            </form>
+                        </div>
 
 
-                            <!-- <div class="col-md-6 col-lg-5 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <!-- <div class="col-md-6 col-lg-5 d-flex align-items-stretch mb-5 mb-lg-0">
                                 <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                                     <h4 class="title d-flex justify-content-center">
                                         <p>Bahasa Inggris</p>
@@ -208,12 +186,13 @@
                          -->
                     </div>
                 </div>
-            </section>
-        
-        
+        </section>
+
+
     </main>
     <!-- back to top -->
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
     <!-- end of back to top -->
 
     <!-- footer  -->
@@ -263,5 +242,3 @@
   </script>
 
 </html>
-
-
