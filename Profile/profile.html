@@ -65,8 +65,8 @@
                         <div id="profile" class="col-sm-5 text-center">
                             <div>
                                 <img
-                                    src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius"
-                                    alt="User-Profile-Image">
+                                    id="display_image" class="img-radius">
+                                    <input type="text" id="namebox" style="visibility: hidden;"> 
                             </div>
                             <h3 id="namaText"></h3>
                         </div>
@@ -82,14 +82,19 @@
                         </div>
                         <!-- button logout -->
                         <div class="col-sm-2">
-                            <button class="btn btn-primary" onclick="location.href='/Login/login.html'">Logout</button>
+                            <button class="btn btn-primary" onclick="location.href='/prelogin.html'">Logout</button>
                         </div>
                         
                 </div>
             </div>
             <!-- Update -->
         </section>
-
+        <style>
+            img{
+        height: 200px; width: 200px;
+        border-radius: 2px black solid;
+    }
+        </style>
         <section>
             <div class="container">
                 <div class="row">
@@ -117,7 +122,7 @@
                                 <input type="text" class="form-control" id="nomor" placeholder="Nomor Telphone">
                             <div class="form-group">
                                 <label for="">Photo Profile</label>
-                                <input type="file" class="form-control" id="photo" placeholder="Photo Profile">
+                                <input type="file" accept="image/png, image/jpg" class="form-control" id="photo" placeholder="Photo Profile">
                             </div>
                         </div>
                     </div>
@@ -149,9 +154,10 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-storage.js"></script>
-
     <script src="../Profile/profile.js"></script>
-
+    <script>
+        
+    </script>
 </body>
 
 </html>
